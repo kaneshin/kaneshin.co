@@ -44,7 +44,7 @@ test-report:
 		go test -coverprofile=profile.out -covermode=atomic $$d || exit 1; \
 		[ -f profile.out ] && cat profile.out >> coverage.txt && rm profile.out || true; done
 
-.PHONY: golint gocyclo gocov hugo
+.PHONY: golint gocyclo gocov
 golint:
 ifndef HAVE_GOLINT
 	@echo "Installing linter"
