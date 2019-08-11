@@ -1,0 +1,31 @@
+// Import Bulma's core
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/functions";
+
+@import 'variables';
+
+$color-green-primary: $color-green-03;
+$color-blue-primary: $color-blue-02;
+$color-gray-primary: $color-gray-00;
+$color-red-primary: $color-red-02;
+
+$primary: $blue !default;
+$primary-invert: findColorInvert($blue) !default;
+
+$link: $black;
+
+// Disable the screen breakpoint
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+
+$family-sans-serif: Ubuntu, $family-sans-serif;
+$family-primary: $family-sans-serif;
+// $family-monospace: Monaco, monospace;
+// $family-code: $family-monospace;
+
+// Import Bulma and Buefy styles
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
