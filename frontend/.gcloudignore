@@ -14,4 +14,4 @@
 .gitignore
 
 # Node.js dependencies:
-frontend/node_modules/
+node_modules/

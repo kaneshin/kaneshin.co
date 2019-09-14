@@ -1,5 +1,5 @@
-deploy-frontend:
-	@gcloud app deploy app.yaml --project kaneshin-co
+deploy-frontend: build-frontend
+	@cd frontend && yarn deploy
 
 build-frontend:
 	@cd frontend && yarn build
