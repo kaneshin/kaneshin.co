@@ -70,7 +70,7 @@ const config: NuxtConfiguration = {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(/* config, ctx */) {}
   }
 }
 

@@ -1,4 +1,4 @@
-# kaneshin.co
+# kaneshin.co/frontend
 
 ## Prerequisite
 
