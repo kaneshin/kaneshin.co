@@ -1,15 +1,11 @@
-const environment = process.env.NODE_ENV || 'development'
-const envSet = require(`./env.${environment}.js`)
-
 import NuxtConfiguration from '@nuxt/config'
 
 const config: NuxtConfiguration = {
   mode: 'spa',
 
-  /*
-   ** Environment Variables
-   */
-  env: envSet,
+  env: {
+    language: 'ja'
+  },
 
   /*
    ** Headers of the page
@@ -42,8 +38,7 @@ const config: NuxtConfiguration = {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    '~/plugins/axios',
-    '~/plugins/vue-chat-scroll'
+    '~/plugins/axios'
   ],
   /*
    ** Nuxt.js modules

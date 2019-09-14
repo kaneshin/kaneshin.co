@@ -68,11 +68,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import Vue from 'vue'
+import Component from 'vue-class-component'
 import Link from '~/models/Link'
 import { links } from '~/utils'
 
-@Component
+@Component({})
 export default class Index extends Vue {
 
   private location: string = window.location.href
