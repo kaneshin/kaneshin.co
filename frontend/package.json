@@ -24,7 +24,6 @@
     "nuxt": "^2.0.0",
     "nuxt-buefy": "^0.3.14",
     "nuxt-fontawesome": "^0.4.0",
-    "pusher-js": "^5.0.1",
     "ts-node": "^8.4.1",
     "vue-class-component": "^7.1.0"
   },
