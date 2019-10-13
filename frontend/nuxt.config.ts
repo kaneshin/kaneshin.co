@@ -1,6 +1,6 @@
-import NuxtConfiguration from '@nuxt/config'
+import { Configuration } from '@nuxt/types'
 
-const config: NuxtConfiguration = {
+const config: Configuration = {
   mode: 'spa',
 
   env: {
@@ -40,6 +40,14 @@ const config: NuxtConfiguration = {
   plugins: [
     '~/plugins/axios'
   ],
+
+  buildModules: ['@nuxt/typescript-build'],
+
+  typescript: {
+    typeCheck: true,
+    ignoreNotFoundWarnings: true
+  },
+
   /*
    ** Nuxt.js modules
    */
