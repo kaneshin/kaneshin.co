@@ -1,0 +1,40 @@
+runtime: go111
+
+instance_class: F1
+
+automatic_scaling:
+  max_instances: 1
+  max_idle_instances: 1
+  target_cpu_utilization: 0.9
+  max_concurrent_requests: 50
+  min_pending_latency: 1000ms
+  max_pending_latency: automatic
+
+handlers:
+- url: /
+  static_files: index.html
+  upload: index.html
+  secure: always
+
+- url: /dist
+  static_dir: dist
+  secure: always
+
+- url: /favicon.ico$
+  static_files: static/\1
+  upload: static/favicon.ico$
+  secure: always
+
+- url: /img/(.*\.(gif|png|jpg|jpeg))$
+  static_files: static/img/\1
+  upload: static/img/.*\.(gif|png|jpg|jpeg)$
+  secure: always
+
+- url: /photos/(.*\.(gif|png|jpg|jpeg))$
+  static_files: static/photos/\1
+  upload: static/photos/.*\.(gif|png|jpg|jpeg)$
+  secure: always
+
+- url: /.*
+  script: auto
+  secure: always

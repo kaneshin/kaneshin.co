@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "dev": "dev_appserver.py app.yaml",
+    "watch": "webpack --watch --config webpack.config.js",
+    "build": "webpack --config webpack.config.js"
+  },
+  "devDependencies": {
+    "css-loader": "^3.5.3",
+    "postcss-loader": "^3.0.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "tailwindcss": "^1.4.6"
+  }
+}
