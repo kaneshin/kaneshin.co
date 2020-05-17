@@ -1,7 +1,0 @@
-{
-  "semi": false,
-  "arrowParens": "always",
-  "singleQuote": true,
-  "printWidth": 9999,
-  "htmlWhitespaceSensitivity": 'ignore',
-}
