@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"log"
 	"net/http"
 	"os"
@@ -9,6 +8,7 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"
+	"github.com/unrolled/render"
 )
 
 type (
@@ -38,8 +38,10 @@ type (
 	}
 )
 
+var rndr = render.New()
+
 func pingHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("pong"))
+	rndr.Text(w, http.StatusOK, "pong")
 }
 
 const kaneshinPrimaryEmail = "kaneshin0120@gmail.com"
@@ -75,17 +77,15 @@ func usersHandler(w http.ResponseWriter, r *http.Request) {
 		if ok {
 			u.PrimaryEmail = ""
 			u.PrimaryPhone = ""
-			json.NewEncoder(w).Encode(u)
+			rndr.JSON(w, http.StatusOK, u)
 			return
 		}
-		json.NewEncoder(w).Encode(v)
-		return
 	}
-	json.NewEncoder(w).Encode(User{})
+	rndr.JSON(w, http.StatusOK, User{})
 }
 
 func photosHandler(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(map[string]interface{}{})
+	rndr.JSON(w, http.StatusOK, map[string]interface{}{})
 }
 
 func main() {
