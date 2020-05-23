@@ -9,33 +9,62 @@
 </head>
   <body>
     <header class="bg-white">
-      <div class="max-w-screen-xl mx-auto pt-4 pb-4 pl-8 pr-8">
-        <a class="flex item-start" href="/">
-          <div>
-            <img class="h-8 rounded-full" src="/img/logo.png" alt="">
-          </div>
-          <div class="flex ml-2 items-center">
-            <p class="text-lg">Shintaro Kaneko</p>
-          </div>
+      <div class="h-full flex justify-between max-w-screen-xl mx-auto px-6">
+
+        <a class="h-full flex items-center" href="/">
+          <h1 class="h-full flex items-center text-lg">
+            kaneshin.co
+          </h1>
         </a>
+
+        <!--
+        <form class="h-full w-2/5 flex items-center">
+          <div class="flex items-center w-full relative">
+            <input class="bg-gray-200 w-full py-2 pl-10 pr-4 appearance-none rounded leading-tight focus:outline-none focus:bg-white focus:shadow-outline placeholder-gray-500" id="search-resources" type="text" placeholder='Search resources (Press "/" to focus)' />
+            <div class="h-full flex items-center absolute bottom-0 left-0 ml-4 text-gray-500 pointer-events-none">
+              <svg class="h-full w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path class="heroicon-ui" d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/></svg>
+            </div>
+          </div>
+        </form>
+        -->
+
       </div>
     </header>
 
-    <section>
-      <div class="max-w-screen-xl mx-auto pt-4 pb-8 px-8">
-        <img class="h-20 w-20 mt-8 rounded-full mx-auto" src="/img/kaneshin.jpg">
-        <div class="text-center mt-6 mb-6">
-          <h1 class="text-2xl tracking-wide mb-2">Shintaro Kaneko (kaneshin)</h1>
-          <p>Tokyo, Japan</p>
+    <section class="mb-12"></section>
+
+    <section class="mb-16">
+      <div class="max-w-screen-xl mx-auto px-6">
+        <div class="md:flex">
+          <div class="flex-1 md:flex md:mr-4 mb-8">
+            <img class="h-20 w-20 md:h-24 md:w-24 rounded-full mx-auto md:mx-1 md:mr-6" src="/img/kaneshin.jpg">
+            <div class="text-center md:text-left">
+              <h2 class="text-xl">Shintaro Kaneko</h2>
+              <p class="mb-2">Tokyo, Japan</p>
+              <p class="font-thin">Hi, this is kaneshin. Building things with Go.</p>
+              <p class="font-thin">Experiences: Go / C / JavaScript / TypeScript / Swift / Engineering Management / Mathematics</p>
+            </div>
+          </div>
+          <div class="flex-1 md:ml-4">
+            <!--
+            <div class="w-full lg:flex">
+              <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('/img/kaneshin.jpg')" title="Woman holding a mug">
+              </div>
+              <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                <div class="mb-8">
+                  <div class="text-gray-900 font-bold text-xl mb-2">Can coffee make you a better developer?</div>
+                  <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
+                </div>
+              </div>
+            </div>
+            -->
+          </div>
         </div>
-        <p class="font-thin leading-loose">
-          I'm kaneshin who is the CTO at Eureka. I relish building things with Go, C, Bash and so on. I have strong experiences in my career. One is the Go programming language, another is Google Cloud Platform, another is engineering management and the other is mathematics especially operating research.
-        </p>
       </div>
     </section>
 
-    <section>
-      <div class="max-w-screen-xl mx-auto p-8">
+    <section class="mb-16">
+      <div class="max-w-screen-xl mx-auto px-6 pb-8">
         <div class="">
           <h2 class="text-4xl font-display">"Be Natural"</h2>
           <p>what I mean by "This is be yourself".</p>
@@ -46,8 +75,8 @@
       </div>
     </section>
 
-    <footer class="my-8">
-      <div class="max-w-screen-xl mx-auto p-8">
+    <footer class="mb-16">
+      <div class="max-w-screen-xl mx-auto px-6">
         <div class="flex flex-col md:flex-row-reverse items-stretch">
           <div class="flex-1">
             <p class="text-sm mb-2">ON SOCIAL</p>
