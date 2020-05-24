@@ -16,15 +16,15 @@ handlers:
   upload: dist/index.html
   secure: always
 
-  # posts
-- url: /posts
-  static_files: dist/posts.html
-  upload: dist/posts.html
+  # blog
+- url: /blog/?
+  static_files: dist/blog.html
+  upload: dist/blog.html
   secure: always
 
-- url: /posts/(.*\.html)$
-  static_files: dist/posts/\1
-  upload: dist/posts/.*\.html$
+- url: /blog/(.*\.html)$
+  static_files: dist/blog/\1
+  upload: dist/blog/.*\.html$
   secure: always
 
 - url: /dist

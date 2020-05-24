@@ -49,13 +49,13 @@ div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8")
   -   {
   -     title: "Go Conference 2015 Summer",
   -     description: "This session explains how to debug Go code with GDB",
-  -     link: '/posts/2015-06-21-gocon-2015-summer.html',
+  -     link: '/blog/2015-06-21-gocon-2015-summer.html',
   -     image: '/img/activity/gocon2015.jpg',
   -     tags: ['conference', 'technology', 'go'],
   -   },
   - ]
   each activity in activities
-    div.shadow-lg.overflow-hidden
+    div(class="shadow-md overflow-hidden hover:shadow-lg transition ease-in-out duration-500")
       div(class="h-48 bg-cover bg-center text-center" style="background-image: url("+activity.image+")" title=activity.title)
       div.p-4.bg-white.flex.flex-col.justify-between
         a(class="mb-2 inline-block text-xl font-bold hover:underline" href=activity.link) #{activity.title}

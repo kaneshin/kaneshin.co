@@ -59,7 +59,7 @@ module.exports = {
     // generate html from markdown of posts
     glob.sync('posts/20[0-9][0-9]/*.md').map(function(v) {
       return new HtmlWebpackPlugin({
-        filename: path.join('posts', path.basename(v, '.md') + '.html'),
+        filename: path.join('blog', path.basename(v, '.md') + '.html'),
         templateParameters: {
           date: path.basename(v, '.md').match(/20[0-9]{2}(-[0-9]{2}){2}/)[0].split('-').join('/'),
           content: marked(fs.readFileSync(v, { encoding: "utf8" })),

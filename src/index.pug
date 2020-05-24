@@ -3,28 +3,18 @@ extends layouts/default.pug
 block content
   section.my-16
     div.mx-auto.px-6.max-w-screen-xl
-      div(class="md:flex")
+      div(class="md:flex md:justify-between")
 
-        div(class="mb-8 md:mr-4 flex-1 md:flex")
-          img(class="mx-auto mb-4 md:mr-6 h-20 w-20 md:h-24 md:w-24 rounded-full" src="/img/kaneshin.jpg")
+        div(class="mb-4 md:mb-0 md:mr-4 md:flex")
+          img(class="mx-auto mb-4 md:ml-0 md:mr-6 h-20 w-20 md:h-24 md:w-24 rounded-full" src="/img/kaneshin.jpg")
           div(class="text-center md:text-left")
             h2.text-xl Shintaro Kaneko
             p.mb-2 Tokyo, Japan
             p.font-thin Hi, this is kaneshin. Building things with Go.
             p.font-thin Experiences: Go / C / JavaScript / TypeScript / Swift / Engineering Management / Mathematics
 
-        div(class="md:ml-4 flex-1")
-          div(class="mb-6 w-full lg:flex rounded shadow overflow-hidden")
-            // div(class="h-48 lg:h-auto lg:w-48 flex-none bg-cover bg-center text-center" style="background-image: url('/img/pigeon.png')")
-            // div.p-4.flex.flex-col.justify-between.bg-white.leading-normal
-            //   div.mb-2
-            //     a(class="mb-2 text-xl font-bold hover:underline" href="https://github.com/kaneshin/pigeon") GitHub: kaneshin/pigeon
-            //     p Pigeon is a Google Cloud Vision library written in Go
-
-            //   div
-            //     span.mr-2.inline-block.text-sm.text-gray-500 #technology
-            //     span.mr-2.inline-block.text-sm.text-gray-500 #go
-            //     span.mr-2.inline-block.text-sm.text-gray-500 #image_recognition
+        div(class="mb-4 md:w-1/4 flex justify-center flex-wrap md:flex-col md:self-start md:border-l")
+          include components/directory.pug
 
   section.mb-16
     div.mx-auto.px-6.max-w-screen-xl
