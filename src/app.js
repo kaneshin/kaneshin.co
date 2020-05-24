@@ -1,5 +1,5 @@
-import './assets/css/style.css';
-import './index.pug';
+import './assets/scss/style.scss'
+import 'highlight.js/lib/core'
 
 document.addEventListener('keyup', function(e) {
   if (e.key !== 'Escape') {

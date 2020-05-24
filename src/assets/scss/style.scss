@@ -13,6 +13,40 @@ header {
   box-shadow: inset 0 -1px 0px rgba(0, 0, 0, .08);
 }
 
+.post {
+  @apply mt-10;
+  h2, h3 {
+    @apply mt-10 mb-6 font-display;
+  }
+  p, ul {
+    @apply mb-4 leading-loose;
+  }
+
+  img {
+    @apply w-full;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+  h3 {
+    @apply text-2xl;
+  }
+  h4 {
+    @apply mt-8 mb-4 text-xl;
+  }
+
+  ul {
+    @apply ml-6 list-disc;
+  }
+  pre {
+    @apply mb-4 p-4  bg-gray-100 text-sm whitespace-pre-wrap;
+    code {
+      @apply font-code;
+    }
+  }
+}
+
 @import 'tailwindcss/components';
 /* purgecss end ignore */
 @import 'tailwindcss/utilities';
+@import 'highlight.js/styles/github';
