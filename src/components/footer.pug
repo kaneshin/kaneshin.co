@@ -1,0 +1,24 @@
+footer.mb-16
+  div.mx-auto.px-6.max-w-screen-xl
+
+    div(class="flex flex-col md:flex-row-reverse items-stretch")
+
+      div.flex-1
+        p.mb-2.text-sm ON SOCIAL
+        ul
+          - var values = {
+          -   GitHub: 'https://github.com/kaneshin',
+          -   Twitter: 'https://twitter.com/kaneshin0120',
+          -   Facebook: 'https://facebook.com/shintaro.kaneko',
+          -   Instagram: 'https://instagram.com/kaneshin0120',
+          -   Medium: 'https://medium.com/@kaneshin0120',
+          -   note: 'https://note.com/kaneshin',
+          - }
+          each val, key in values
+            li
+              a(href=val) #{key}
+
+      div.flex-1
+        p.mb-1.text-lg Shintaro Kaneko
+        p.text-xs &copy; 2020
+

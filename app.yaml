@@ -12,8 +12,8 @@ automatic_scaling:
 
 handlers:
 - url: /
-  static_files: index.html
-  upload: index.html
+  static_files: dist/index.html
+  upload: dist/index.html
   secure: always
 
 - url: /dist

@@ -1,0 +1,51 @@
+div.mb-5
+  h2.font-display.text-4xl Contribution activity
+
+div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8")
+
+  - var activities = [
+  -   {
+  -     title: "Gopher's Holiday 2020 Winter",
+  -     description: 'This book was written by the members of golang.tokyo and gophers. I am a contributor of "The Initialization Process in Go".',
+  -     link: 'https://techbookfest.org/product/6332688805920768',
+  -     image: '/img/book/techbookfest8-golangtokyo.jpg',
+  -     tags: ['book', 'techbookfest', 'go', 'programming'],
+  -   },
+  -   {
+  -     title: "Gopher's Holiday 2019 Autumn",
+  -     description: 'This book was written by the members of golang.tokyo and gophers. I am a contributor of "Secure Coding Practices in Go".',
+  -     link: 'https://techbookfest.org/product/5674890539565056',
+  -     image: '/img/book/techbookfest7-golangtokyo.jpg',
+  -     tags: ['book', 'techbookfest', 'go', 'programming'],
+  -   },
+  -   {
+  -     title: "TV appearance: NHK Educational TV",
+  -     description: '人間ってナンだ？超ＡＩ入門　シーズン２ 第７回「恋愛する」（NHK Eテレ）',
+  -     link: 'https://www2.nhk.or.jp/archives/chronicle/pg/page010-01-01.cgi?recId=0001000000000000%400000000000000000000000-49-1E-3300000000000000000000',
+  -     image: '/img/pairs.png',
+  -     tags: ['television', 'technology', 'pairs'],
+  -   },
+  -   {
+  -     title: "Methods and ideas to write Go code",
+  -     description: 'This book explains the Go Programming Language development methods and design concepts based on the Unix philosophy.',
+  -     link: 'https://kaneshin.booth.pm/items/1061168',
+  -     image: '/img/book/techbookfest5-eureka.jpg',
+  -     tags: ['book', 'techbookfest', 'go', 'programming'],
+  -   },
+  -   {
+  -     title: "GitHub: kaneshin/pigeon",
+  -     description: 'Pigeon is a Google Cloud Vision library written in Go',
+  -     link: 'https://github.com/kaneshin/pigeon',
+  -     image: '/img/pigeon.png',
+  -     tags: ['technology', 'go', 'image_recognition'],
+  -   },
+  - ]
+  each activity in activities
+    div.shadow-lg.overflow-hidden
+      div(class="h-48 bg-cover bg-center text-center" style="background-image: url("+activity.image+")" title=activity.title)
+      div.p-4.bg-white.flex.flex-col.justify-between
+        a(class="mb-2 inline-block text-xl font-bold hover:underline" href=activity.link) #{activity.title}
+        p.mb-2 #{activity.description}
+        div
+          each tag in activity.tags
+            span.mr-2.inline-block.text-sm.text-gray-500 ##{tag}

@@ -1,12 +1,18 @@
 {
   "scripts": {
-    "dev": "dev_appserver.py app.yaml",
-    "watch": "webpack --watch --config webpack.config.js",
-    "build": "webpack --config webpack.config.js"
+    "start": "dev_appserver.py app.yaml --watcher_ignore_re \".*/node_modules/.*\"",
+    "watch": "webpack --watch --config webpack.config.js --mode development",
+    "build:dev": "webpack --config webpack.config.js --mode development",
+    "build": "webpack --config webpack.config.js --mode production"
   },
   "devDependencies": {
     "css-loader": "^3.5.3",
+    "extract-loader": "^5.0.1",
+    "file-loader": "^6.0.0",
+    "html-loader": "^1.1.0",
     "postcss-loader": "^3.0.0",
+    "pug": "^2.0.4",
+    "pug-html-loader": "^1.1.5",
     "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"

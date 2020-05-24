@@ -1,4 +1,5 @@
 import './assets/css/style.css';
+import './index.pug';
 
 document.addEventListener('keyup', function(e) {
   if (e.key !== 'Escape') {
