@@ -16,12 +16,12 @@ handlers:
   upload: dist/index.html
   secure: always
 
-  # blog
-- url: /blog/?
-  static_files: dist/blog.html
-  upload: dist/blog.html
+- url: /(blog|contact|about)/?$
+  static_files: dist/\1.html
+  upload: dist/\1.html
   secure: always
 
+  # blog
 - url: /blog/(.*\.html)$
   static_files: dist/blog/\1
   upload: dist/blog/.*\.html$

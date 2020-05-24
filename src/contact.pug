@@ -1,0 +1,22 @@
+extends layouts/default.pug
+
+block content
+  section.my-16
+    div.mx-auto.px-6.max-w-screen-xl
+      div.mb-5
+        h2(class="font-display text-4xl md:text-5xl font-bold") Contact
+
+      form(class="w-full")
+        div(class="mb-6")
+          label(class="mb-2 pr-4 block" for="inline-full-name") Full Name
+          input(class="bg-gray-100 appearance-none border border-gray-100 rounded w-full py-2 px-4 leading-tight focus:outline-none focus:bg-white" id="inline-full-name" type="text")
+
+        div(class="mb-6")
+          label(class="mb-2 pr-4 block" for="inline-email-address") Email Address
+          input(class="bg-gray-100 appearance-none border border-gray-100 rounded w-full py-2 px-4 leading-tight focus:outline-none focus:bg-white" id="inline-email-address" type="text")
+
+        div(class="mb-6")
+          label(class="mb-2 pr-4 block" for="inline-inquiry") Inquiry
+          textarea(class="bg-gray-100 appearance-none border border-gray-100 rounded w-full py-2 px-4 leading-tight focus:outline-none focus:bg-white" id="inline-inquiry" rows=8)
+
+        button(class="shadow bg-gray-800 hover:bg-gray-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button" onclick="contactSend") Send

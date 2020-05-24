@@ -29,3 +29,4 @@ function searchResourcesEvent(e) {
   }
   document.getElementById(id).focus(opt)
 }
+
