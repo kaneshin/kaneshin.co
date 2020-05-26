@@ -1,9 +1,10 @@
 ## Make a slice from a type
 
 Do you know how to make a slice from a type of value. We will do it with `reflect.MakeSlice` of reflect package but it's a little complex to fulfill.
+
 ### Implementation
 
-Actually, it's easy if you know how to implement.
+It's easy if you know how to implement.
 
 ```go
 type User struct {
@@ -25,7 +26,7 @@ func main() {
 	x := reflect.New(slice.Type())
 	x.Elem().Set(slice)
 
-    // []User
+	// []User
 	var userValue reflect.Value = x.Elem()
 
 	// Do something...
@@ -34,7 +35,7 @@ func main() {
 
 At first, make `reflect.Type` from a value which is what you want slice. Then, use `reflect.MakeSlice` to obtain your slice.
 
-### Code, All of your need
+### Code, all of your need
 
 I wrote an example of `MakeSlice` for you all!
 So see and touch the following code. :)
@@ -44,5 +45,7 @@ So see and touch the following code. :)
 
 Simply **Run** the code below.
 
-<iframe src="https://play.golang.org/p/f-ChmzkLRF" frameborder="0" style="width: 100%; height: 100%"><a href="https://play.golang.org/p/f-ChmzkLRF">see this code in play.golang.org</a></iframe>
+<iframe class="w-full h-screen" src="https://play.golang.org/p/LP2EuFT9NLG" frameborder="0">
+  <a href="https://play.golang.org/p/f-ChmzkLRF">see this code in play.golang.org</a>
+</iframe>
 

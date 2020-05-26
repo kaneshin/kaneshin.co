@@ -1,7 +1,7 @@
 extends layouts/default.pug
 
 block content
-  section.my-16
+  section.mt-12.mb-16
     div.mx-auto.px-6.max-w-screen-md
       div.mb-5
         h2(class="font-display text-4xl md:text-5xl font-bold") Blog
@@ -12,8 +12,8 @@ block content
       -     'Hello world': '2020-05-24-hello-world',
       -   }},
       -   { 2016: {
-      -   //  'Pigeon - Library for Cloud Vision API': '2016-02-27-pigeon',
-      -   //  'Make a slice from a type': '2016-01-01-make-slice',
+      -     'Pigeon - Library for Cloud Vision API': '2016-02-27-pigeon',
+      -     'Make a slice from a type': '2016-01-01-make-slice',
       -   }},
       -   { 2015: {
       -     'Go Conference 2015 Summer': '2015-06-21-gocon-2015-summer',
@@ -25,9 +25,10 @@ block content
       - ]
         each years in posts
           each list, key in years
-            h3.font-display.text-2xl #{key}
-            ul.pl-6.list-disc
-              each link, title in list
-                li
-                  a(href="/blog/"+link) #{title}
+            div.mb-4
+              h3.font-display.text-2xl #{key}
+              ul.pl-6.list-disc
+                each link, title in list
+                  li
+                    a(href="/blog/"+link) #{title}
 
