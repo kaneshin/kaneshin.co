@@ -18,21 +18,27 @@ handlers:
 
 - url: /(blog|contact|about)/?$
   static_files: dist/\1.html
-  upload: dist/\1.html$
+  upload: dist/.*\.html$
   secure: always
 
-  # blog
-- url: /blog/(.*\.html)$
-  static_files: dist/blog/\1
+  # blog: html
+- url: /blog/([0-9]{4})-([0-9]{2}-[0-9]{2})-(.*)$
+  static_files: dist/blog/\1-\2-\3.html
   upload: dist/blog/.*\.html$
+  secure: always
+
+  # blog: markdown
+- url: /blog/([0-9]{4})-([0-9]{2}-[0-9]{2})-(.*)\.md$
+  static_files: posts/\1/\1-\2-\3.md
+  upload: posts/.*\.md$
   secure: always
 
 - url: /dist/(app\.js)$
   static_files: dist/\1
-  upload: dist/\1$
+  upload: dist/(app\.js)$
   secure: always
 
-- url: /(favicon.ico)$
+- url: /(favicon\.ico)$
   static_files: static/\1
   upload: static/favicon.ico$
   secure: always
