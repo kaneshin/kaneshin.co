@@ -22,13 +22,13 @@ handlers:
   secure: always
 
   # blog: html
-- url: /blog/([0-9]{4})-([0-9]{2}-[0-9]{2})-(.*)$
+- url: /blog/([0-9]{4})-([0-9]{2}-[0-9]{2})-([^\.]*)(\.html)?$
   static_files: dist/blog/\1-\2-\3.html
   upload: dist/blog/.*\.html$
   secure: always
 
   # blog: markdown
-- url: /blog/([0-9]{4})-([0-9]{2}-[0-9]{2})-(.*)\.md$
+- url: /blog/([0-9]{4})-([0-9]{2}-[0-9]{2})-([^\.]*)\.md$
   static_files: posts/\1/\1-\2-\3.md
   upload: posts/.*\.md$
   secure: always
