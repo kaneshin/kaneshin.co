@@ -16,21 +16,9 @@ handlers:
   upload: dist/index.html
   secure: always
 
-- url: /blog/?$
-  static_files: dist/blog.html
-  upload: dist/blog.html
-  secure: always
-
-
-- url: /contact/?$
-  static_files: dist/contact.html
-  upload: dist/contact.html
-  secure: always
-
-
-- url: /about/?$
-  static_files: dist/about.html
-  upload: dist/about.html
+- url: /(blog|contact|about)/?$
+  static_files: dist/\1.html
+  upload: dist/\1.html$
   secure: always
 
   # blog
@@ -39,11 +27,12 @@ handlers:
   upload: dist/blog/.*\.html$
   secure: always
 
-- url: /dist
-  static_dir: dist
+- url: /dist/(app\.js)$
+  static_files: dist/\1
+  upload: dist/\1$
   secure: always
 
-- url: /favicon.ico$
+- url: /(favicon.ico)$
   static_files: static/\1
   upload: static/favicon.ico$
   secure: always
