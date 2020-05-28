@@ -1,17 +1,17 @@
 import './assets/scss/style.scss'
 import 'highlight.js/lib/core'
 
-document.addEventListener('keyup', function(e) {
+document.addEventListener('keyup', (e) => {
   if (e.key !== 'Escape') {
     return
   }
 })
 
-document.addEventListener('keypress', function(e) {
+document.addEventListener('keypress', (e) => {
   searchResourcesEvent(e)
 })
 
-function searchResourcesEvent(e) {
+var searchResourcesEvent = (e) => {
   const id = 'search-resources'
   let active = document.activeElement
 

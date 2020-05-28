@@ -6,7 +6,7 @@ const hljs = require('highlight.js')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 marked.setOptions({
-  highlight: function(code, lang) {
+  highlight: (code, lang) => {
     return hljs.highlight(lang, code).value
   }
 })
@@ -48,7 +48,7 @@ module.exports = {
   },
 
   plugins: [].concat(
-    glob.sync('src/*.pug').map(function(v) {
+    glob.sync('src/*.pug').map((v) => {
       return new HtmlWebpackPlugin({
         filename: path.basename(v, '.pug') + '.html',
         template: v,
@@ -57,7 +57,7 @@ module.exports = {
     })
   ).concat(
     // generate html from markdown of posts
-    glob.sync('posts/20[0-9][0-9]/*.md').map(function(v) {
+    glob.sync('posts/20[0-9][0-9]/*.md').map((v) => {
       return new HtmlWebpackPlugin({
         filename: path.join('blog', path.basename(v, '.md') + '.html'),
         templateParameters: {
