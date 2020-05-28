@@ -1,3 +1,5 @@
+const fontDefault = ['BlinkMacSystemFont', '-apple-system', 'Segoe UI', 'Roboto', 'Oxygen', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif']
+
 module.exports = {
   purge: [
     './src/**/*.html',
@@ -7,8 +9,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      display: ['Lato', 'Ubuntu', 'BlinkMacSystemFont', '-apple-system', 'Segoe UI', 'Roboto', 'Oxygen', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
-      body: ['Lato', 'Ubuntu', 'BlinkMacSystemFont', '-apple-system', 'Segoe UI', 'Roboto', 'Oxygen', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+      display: ['Lato'].concat(fontDefault),
+      body: ['Lato'].concat(fontDefault),
       code: ['Monaco', 'Menlo', 'monospace'],
     },
   },
