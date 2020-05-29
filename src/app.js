@@ -1,4 +1,4 @@
-import './assets/scss/style.scss'
+import './assets/styles/style.scss'
 import 'highlight.js/lib/core'
 
 document.addEventListener('keyup', (e) => {
