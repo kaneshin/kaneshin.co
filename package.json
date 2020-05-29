@@ -1,11 +1,14 @@
 {
   "scripts": {
-    "start": "dev_appserver.py app.yaml --watcher_ignore_re \".*/node_modules/.*\"",
+    "start": "dev_appserver.py app.yaml --port=3388 --watcher_ignore_re \".*/node_modules/.*\"",
+    "dev": "webpack-dev-server --hot --inline",
     "watch": "webpack --watch --config webpack.config.js --mode development",
     "build:dev": "webpack --config webpack.config.js --mode development",
     "build": "NODE_ENV=production webpack --config webpack.config.js --mode production"
   },
   "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "browser-sync-webpack-plugin": "^2.2.2",
     "css-loader": "^3.5.3",
     "extract-loader": "^5.1.0",
     "file-loader": "^6.0.0",
@@ -23,7 +26,8 @@
     "style-loader": "^1.2.1",
     "tailwindcss": "^1.4.6",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {}
 }

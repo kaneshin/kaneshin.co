@@ -3,6 +3,7 @@ const glob = require('glob')
 const fs = require('fs')
 const marked = require("marked")
 const hljs = require('highlight.js')
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 marked.setOptions({
@@ -18,6 +19,10 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: "[name].js",
+  },
+
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
   },
 
   module: {
@@ -47,7 +52,13 @@ module.exports = {
     ],
   },
 
-  plugins: [].concat(
+  plugins: [
+    new BrowserSyncPlugin({
+      host: 'localhost',
+      port: 3380,
+      proxy: 'http://localhost:3388',
+    }),
+  ].concat(
     glob.sync('src/*.pug').map((v) => {
       return new HtmlWebpackPlugin({
         filename: path.basename(v, '.pug') + '.html',
