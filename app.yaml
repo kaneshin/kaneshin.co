@@ -16,7 +16,7 @@ handlers:
   upload: dist/index.html
   secure: always
 
-- url: /(blog|contact|about)/?$
+- url: /(blog|contact|about|playground)/?$
   static_files: dist/\1.html
   upload: dist/.*\.html$
   secure: always

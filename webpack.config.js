@@ -6,7 +6,6 @@ const hljs = require('highlight.js')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 marked.setOptions({
   highlight: (code, lang) => {
@@ -57,11 +56,9 @@ module.exports = {
   },
 
   plugins: [
-    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css',
-      hmr: process.env.NODE_ENV === 'development',
     }),
     new BrowserSyncPlugin({
       host: 'localhost',

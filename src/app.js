@@ -19,6 +19,32 @@ window.onload = () => {
   console.log('loaded')
 }
 */
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+const e = React.createElement;
+
+class LikeButton extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { liked: false };
+  }
+
+  render() {
+    return e(
+      'button',
+      {
+        onClick: () => {
+          this.setState({ liked: !this.state.liked })
+        }
+      },
+      this.state.liked ? 'Unlike' : 'Like'
+    );
+  }
+}
+
+const domContainer = document.querySelector('#react-container');
+ReactDOM.render(e(LikeButton), domContainer);
 
 document.addEventListener('keyup', (e) => {
   if (e.key !== 'Escape') {
