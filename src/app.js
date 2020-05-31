@@ -1,5 +1,24 @@
 import './assets/styles/style.scss'
 import 'highlight.js/lib/core'
+/*
+import axios from 'axios'
+
+window.onload = () => {
+  axios.get('https://httpbin.org')
+  .then(function (response) {
+    // handle success
+    console.log(response);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .then(function () {
+    // always executed
+  });
+  console.log('loaded')
+}
+*/
 
 document.addEventListener('keyup', (e) => {
   if (e.key !== 'Escape') {

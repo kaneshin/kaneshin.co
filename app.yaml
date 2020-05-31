@@ -33,7 +33,7 @@ handlers:
   upload: posts/.*\.md$
   secure: always
 
-- url: /dist/(app\.js)$
+- url: /(app\.js)$
   static_files: dist/\1
   upload: dist/(app\.js)$
   secure: always

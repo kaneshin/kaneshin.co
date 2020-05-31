@@ -5,6 +5,7 @@ const marked = require("marked")
 const hljs = require('highlight.js')
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 marked.setOptions({
   highlight: (code, lang) => {
@@ -13,9 +14,11 @@ marked.setOptions({
 })
 
 module.exports = {
+
   entry: {
     app: './src/app.js',
   },
+
   output: {
     path: path.join(__dirname, 'dist'),
     filename: "[name].js",
@@ -53,6 +56,7 @@ module.exports = {
   },
 
   plugins: [
+    new CleanWebpackPlugin(),
     new BrowserSyncPlugin({
       host: 'localhost',
       port: 3380,
@@ -63,7 +67,6 @@ module.exports = {
       return new HtmlWebpackPlugin({
         filename: path.basename(v, '.pug') + '.html',
         template: v,
-        inject: false,
       })
     })
   ).concat(
@@ -76,7 +79,6 @@ module.exports = {
           content: marked(fs.readFileSync(v, { encoding: "utf8" })),
         },
         template: 'src/templates/post.pug',
-        inject: false,
       })
     })
   )
