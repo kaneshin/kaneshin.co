@@ -6,29 +6,4 @@ block content
       div.mb-5
         h2(class="font-display text-4xl md:text-5xl font-bold") Blog
 
-      - var posts = [
-      -   { 2020: {
-      -   //  'Documentation for decision-making': '2020-05-24-decision-making-skills',
-      -     'Hello world': '2020-05-24-hello-world',
-      -   }},
-      -   { 2016: {
-      -     'Pigeon - Library for Cloud Vision API': '2016-02-27-pigeon',
-      -     'Make a slice from a type': '2016-01-01-make-slice',
-      -   }},
-      -   { 2015: {
-      -     'Go Conference 2015 Summer': '2015-06-21-gocon-2015-summer',
-      -   //  'Mathematics for Programmers #3': '2015-05-22-math-for-prog',
-      -   //  '8 bit sounds': '2015-05-05-8bit-sounds',
-      -   //  'Push to master': '2015-03-23-pre-push',
-      -     'Geometry': '2015-03-23-geometry',
-      -   }},
-      - ]
-        each years in posts
-          each list, key in years
-            div.mb-4
-              h3.font-display.text-2xl #{key}
-              ul.pl-6.list-disc
-                each link, title in list
-                  li
-                    a(href="/blog/"+link) #{title}
-
+      div#blog-posts

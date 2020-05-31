@@ -30,6 +30,10 @@ module.exports = {
 
   module: {
     rules: [
+      // {
+      //   test: /\.jsx?$/,
+      //   use: [],
+      // },
       {
         test: /\.s[ac]ss$/,
         use: [

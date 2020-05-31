@@ -1,50 +1,7 @@
-import './assets/styles/style.scss'
 import 'highlight.js/lib/core'
-/*
-import axios from 'axios'
-
-window.onload = () => {
-  axios.get('https://httpbin.org')
-  .then(function (response) {
-    // handle success
-    console.log(response);
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  })
-  .then(function () {
-    // always executed
-  });
-  console.log('loaded')
-}
-*/
-import React from 'react'
-import ReactDOM from 'react-dom'
-
-const e = React.createElement;
-
-class LikeButton extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { liked: false };
-  }
-
-  render() {
-    return e(
-      'button',
-      {
-        onClick: () => {
-          this.setState({ liked: !this.state.liked })
-        }
-      },
-      this.state.liked ? 'Unlike' : 'Like'
-    );
-  }
-}
-
-const domContainer = document.querySelector('#react-container');
-ReactDOM.render(e(LikeButton), domContainer);
+import './assets/styles/style.scss'
+import './components/blog'
+import './components/playground'
 
 document.addEventListener('keyup', (e) => {
   if (e.key !== 'Escape') {
