@@ -33,9 +33,9 @@ handlers:
   upload: posts/.*\.md$
   secure: always
 
-- url: /(app\.js)$
+- url: /(app\.(js|css))$
   static_files: dist/\1
-  upload: dist/(app\.js)$
+  upload: dist/(app\.(js|css))$
   secure: always
 
 - url: /(favicon\.ico)$

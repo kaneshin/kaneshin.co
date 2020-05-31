@@ -3,6 +3,7 @@ const glob = require('glob')
 const fs = require('fs')
 const marked = require("marked")
 const hljs = require('highlight.js')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
@@ -33,8 +34,8 @@ module.exports = {
       {
         test: /\.s[ac]ss$/,
         use: [
-          'style-loader',
-          { loader: 'css-loader', options: { importLoaders: 1 } },
+          MiniCssExtractPlugin.loader,
+          'css-loader',
           'postcss-loader',
           'sass-loader',
         ],
@@ -57,6 +58,11 @@ module.exports = {
 
   plugins: [
     new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+      hmr: process.env.NODE_ENV === 'development',
+    }),
     new BrowserSyncPlugin({
       host: 'localhost',
       port: 3380,
