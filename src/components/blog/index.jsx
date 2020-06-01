@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-let posts = [
+let data = [
   {
     year: 2020,
-    data: [
+    posts: [
       {
         title: 'Hello world',
         link: '2020-05-24-hello-world',
@@ -13,7 +13,7 @@ let posts = [
   },
   {
     year: 2016,
-    data: [
+    posts: [
       {
         title: 'Pigeon - Library for Cloud Vision API',
         link: '2016-02-27-pigeon',
@@ -26,7 +26,7 @@ let posts = [
   },
   {
     year: 2015,
-    data: [
+    posts: [
       {
         title: 'Go Conference 2015 Summer',
         link: '2015-06-21-gocon-2015-summer',
@@ -42,41 +42,35 @@ let posts = [
   },
 ]
 
-const e = React.createElement
-
 class Posts extends React.Component {
   render() {
-    return e(
-      'div', null,
-      ...this.props.posts.map(list => {
-        return e('div', { className: 'mb-4' }, e(PostsByYear, list))
-      })
+    const posts = this.props.data.map(list =>
+      <div key={list.year} className="mb-4">
+        <h3 className="font-display text-2xl">{list.year}</h3>
+        <ul className="pl-6 list-disc">
+          {list.posts.map(post => <PostItem key={post.link} post={post} />)}
+        </ul>
+      </div>
+    )
+    return (
+      <div>
+        {posts}
+      </div>
     )
   }
 }
 
-class PostsByYear extends React.Component {
+class PostItem extends React.Component {
   render() {
-    return e(
-      'div', null,
-      e('h3', { className: 'font-display text-2xl' }, this.props.year),
-      e('ul', { className: 'pl-6 list-disc' }, ...this.props.data.map(post => {
-        return e(PostLink, post)
-      }))
-    )
-  }
-}
-
-class PostLink extends React.Component {
-  render() {
-    return e(
-      'li', null,
-      e('a', { href: '/blog/'+this.props.link }, this.props.title)
+    return (
+      <li>
+        <a href={this.props.post.link}>{this.props.post.title}</a>
+      </li>
     )
   }
 }
 
 const dom = document.querySelector('#blog-posts')
 if (dom) {
-  ReactDOM.render(React.createElement(Posts, { posts }), dom)
+  ReactDOM.render(<Posts data={data} />, dom)
 }

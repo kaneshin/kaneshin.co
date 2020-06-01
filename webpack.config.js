@@ -30,10 +30,13 @@ module.exports = {
 
   module: {
     rules: [
-      // {
-      //   test: /\.jsx?$/,
-      //   use: [],
-      // },
+      {
+        test: /\.jsx$/,
+        exclude: /node_modules/,
+        use: [
+          'babel-loader'
+        ],
+      },
       {
         test: /\.s[ac]ss$/,
         use: [
@@ -57,6 +60,10 @@ module.exports = {
         ],
       },
     ],
+  },
+
+  resolve: {
+    extensions: ['.js', '.jsx']
   },
 
   plugins: [

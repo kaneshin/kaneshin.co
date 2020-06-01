@@ -45,17 +45,17 @@ if (containerDOM) {
   ReactDOM.render(e(LikeButton, {}), containerDOM)
 }
 
-const bannerAlertDOM = document.querySelector('#playground-banner-alert')
-if (BannerAlert) {
-  axios.get('/ping')
-    .then(function (response) {
-      // handle success
-      ReactDOM.render(e(BannerAlert, { message: response.data }), bannerAlertDOM)
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error)
-    })
-    .then(function () {
-    })
-}
+// const bannerAlertDOM = document.querySelector('#playground-banner-alert')
+// if (BannerAlert) {
+//   axios.get('/ping')
+//     .then(function (response) {
+//       // handle success
+//       ReactDOM.render(e(BannerAlert, { message: response.data }), bannerAlertDOM)
+//     })
+//     .catch(function (error) {
+//       // handle error
+//       console.log(error)
+//     })
+//     .then(function () {
+//     })
+// }
