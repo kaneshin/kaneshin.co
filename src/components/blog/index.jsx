@@ -7,7 +7,7 @@ let data = [
     posts: [
       {
         title: 'Hello world',
-        link: '2020-05-24-hello-world',
+        link: '/blog/2020-05-24-hello-world',
       },
     ]
   },
@@ -16,11 +16,11 @@ let data = [
     posts: [
       {
         title: 'Pigeon - Library for Cloud Vision API',
-        link: '2016-02-27-pigeon',
+        link: '/blog/2016-02-27-pigeon',
       },
       {
         title: 'Make a slice from a type',
-        link: '2016-01-01-make-slice',
+        link: '/blog/2016-01-01-make-slice',
       },
     ]
   },
@@ -29,14 +29,14 @@ let data = [
     posts: [
       {
         title: 'Go Conference 2015 Summer',
-        link: '2015-06-21-gocon-2015-summer',
+        link: '/blog/2015-06-21-gocon-2015-summer',
       },
-      //  'Mathematics for Programmers #3': '2015-05-22-math-for-prog',
-      //  '8 bit sounds': '2015-05-05-8bit-sounds',
-      //  'Push to master': '2015-03-23-pre-push',
+      //  'Mathematics for Programmers #3': '/blog/2015-05-22-math-for-prog',
+      //  '8 bit sounds': '/blog/2015-05-05-8bit-sounds',
+      //  'Push to master': '/blog/2015-03-23-pre-push',
       {
         title: 'Geometry',
-        link: '2015-03-23-geometry',
+        link: '/blog/2015-03-23-geometry',
       },
     ]
   },
