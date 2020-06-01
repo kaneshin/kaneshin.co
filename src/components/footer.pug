@@ -3,22 +3,29 @@ footer.mb-16
 
     div(class="flex flex-col md:flex-row-reverse items-stretch")
 
-      div.flex-1
-        p.mb-2.text-sm ON SOCIAL
+      div(class="flex-0 mb-6 md:mb-0")
+        p.mb-5.text-xs RESOURCES
+        ul
+          - var values = {
+          - }
+          each val, key in values
+            li.mb-1
+              a(href=val class="text-lg") #{key}
+
+      div(class="flex-1 mb-6 md:mb-0")
+        p.mb-5.text-xs ON SOCIAL
         ul
           - var values = {
           -   GitHub: 'https://github.com/kaneshin',
           -   Twitter: 'https://twitter.com/kaneshin0120',
           -   Facebook: 'https://facebook.com/shintaro.kaneko',
           -   Instagram: 'https://instagram.com/kaneshin0120',
-          -   Medium: 'https://medium.com/@kaneshin0120',
-          -   note: 'https://note.com/kaneshin',
           - }
           each val, key in values
-            li
-              a(href=val) #{key}
+            li.mb-1
+              a(href=val class="text-lg") #{key}
 
       div.flex-1
-        p.mb-1.text-lg Shintaro Kaneko
+        p.mb-4.text-lg Shintaro Kaneko
         p.text-xs &copy; 2020
 
