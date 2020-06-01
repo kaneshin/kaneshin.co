@@ -4,6 +4,8 @@ module.exports = {
   purge: [
     './src/**/*.html',
     './src/**/*.pug',
+    './src/**/*.js',
+    './src/**/*.jsx',
     './src/**/*.s[ac]ss',
     './src/**/*.css',
   ],
