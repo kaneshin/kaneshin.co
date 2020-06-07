@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"net/http"
 	"sync"
+	"time"
 
 	"github.com/unrolled/render"
 	"google.golang.org/appengine/memcache"
@@ -78,8 +79,9 @@ func PostsResponseWriter(ctx context.Context, w http.ResponseWriter) {
 	err = json.NewEncoder(&buf).Encode(posts)
 	if err == nil {
 		item := &memcache.Item{
-			Key:   key,
-			Value: buf.Bytes(),
+			Key:        key,
+			Value:      buf.Bytes(),
+			Expiration: time.Minute,
 		}
 		memcache.Set(ctx, item)
 	}
