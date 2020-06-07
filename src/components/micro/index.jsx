@@ -24,8 +24,8 @@ class Posts extends React.Component {
   render() {
     let posts = this.state.posts.map(post =>
       <li key={post.id} id={post.date.getTime()} className="post">
-         <div className="mb-4 rounded border-l border-b border-gray-200">
-          <a href={'#' + post.date.getTime()} className="permalink px-2 py-1 rounded-r-lg bg-gray-200 text-sm">{post.date.toLocaleString()}</a>
+         <div className="mb-4 rounded border border-gray-200">
+          <a href={'#' + post.date.getTime()} className="permalink px-2 py-1 rounded-tl rounded-br bg-gray-200 text-sm">{post.date.toLocaleString()}</a>
           <div className="my-4 px-4" dangerouslySetInnerHTML={{__html: post.content_html}}></div>
          </div>
       </li>
