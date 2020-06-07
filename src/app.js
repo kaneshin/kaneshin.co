@@ -1,6 +1,7 @@
 import 'highlight.js/lib/core'
 import './assets/styles/style.scss'
 import './components/blog'
+import './components/micro'
 import './components/playground'
 
 document.addEventListener('keyup', (e) => {

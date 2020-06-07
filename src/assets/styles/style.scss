@@ -20,6 +20,12 @@ header {
   p, ul {
     @apply mb-4 leading-loose;
   }
+  blockquote {
+    @apply ml-4 pl-4 border-l;
+  }
+  a {
+    @apply underline;
+  }
 
   img {
     @apply w-full;
@@ -42,6 +48,16 @@ header {
     code {
       @apply font-code;
     }
+  }
+}
+
+.micro .post {
+  img {
+    width: auto;
+    height: 350px;
+  }
+  a.permalink {
+    @apply no-underline;
   }
 }
 
