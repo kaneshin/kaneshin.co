@@ -1,11 +1,15 @@
 package backend
 
 import (
+	"bytes"
+	"context"
+	"encoding/json"
 	"fmt"
 	"net/http"
 	"sync"
 
 	"github.com/unrolled/render"
+	"google.golang.org/appengine/memcache"
 
 	"github.com/kaneshin/kaneshin.co/backend/microblog"
 )
@@ -40,11 +44,44 @@ func NotFoundResponseWriter(w http.ResponseWriter, message string) {
 	errorResposneWriter(w, http.StatusNotFound, message)
 }
 
-func PostsResponseWriter(w http.ResponseWriter) {
+func MethodNotAllowedResponseWriter(w http.ResponseWriter, message string) {
+	if message == "" {
+		message = "Method Not Allowed"
+	}
+	errorResposneWriter(w, http.StatusMethodNotAllowed, message)
+}
+
+func PostsResponseWriter(ctx context.Context, w http.ResponseWriter) {
+	const key = "micro.blog/posts/kaneshin"
+	ret, err := memcache.Get(ctx, key)
+	if err != nil && err != memcache.ErrCacheMiss {
+		BadRequestResponseWriter(w, err.Error())
+		return
+	}
+	if err == nil {
+		var data microblog.PostsData
+		buf := bytes.NewBuffer(ret.Value)
+		err = json.NewDecoder(buf).Decode(&data)
+		if err == nil {
+			rndr.JSON(w, http.StatusOK, data)
+			return
+		}
+	}
+
+	// memcache.ErrCacheMiss
 	posts, err := microblog.Posts("kaneshin")
 	if err != nil {
 		BadRequestResponseWriter(w, err.Error())
 		return
+	}
+	var buf bytes.Buffer
+	err = json.NewEncoder(&buf).Encode(posts)
+	if err == nil {
+		item := &memcache.Item{
+			Key:   key,
+			Value: buf.Bytes(),
+		}
+		memcache.Set(ctx, item)
 	}
 	rndr.JSON(w, http.StatusOK, posts)
 }
@@ -101,7 +138,7 @@ func init() {
 	})
 }
 
-func UsersResponseWriter(w http.ResponseWriter, id string) {
+func UsersResponseWriter(ctx context.Context, w http.ResponseWriter, id string) {
 	v, ok := users.Load(id)
 	if ok {
 		u, ok := v.(User)
