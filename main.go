@@ -4,95 +4,41 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"sync"
 	"time"
 
 	"github.com/gorilla/mux"
-	"github.com/unrolled/render"
+
+	"github.com/kaneshin/kaneshin.co/backend"
 )
-
-type (
-	Name struct {
-		GivenName  string `json:"givenName"`
-		FamilyName string `json:"familyName"`
-		Nickname   string `json:"nickname"`
-	}
-
-	Address struct {
-		State   string `json:"state"`
-		Country string `json:"region"`
-	}
-
-	Organization struct {
-		Name        string `json:"name"`
-		Title       string `json:"title"`
-		Description string `json:"description"`
-	}
-
-	User struct {
-		PrimaryEmail        string       `json:"primaryEmail"`
-		PrimaryPhone        string       `json:"primaryPhone"`
-		Name                Name         `json:"name"`
-		Address             Address      `json:"address"`
-		PrimaryOrganization Organization `json:"primaryOrganization"`
-	}
-)
-
-var rndr = render.New()
-
-func pingHandler(w http.ResponseWriter, r *http.Request) {
-	rndr.Text(w, http.StatusOK, "pong")
-}
-
-const kaneshinPrimaryEmail = "kaneshin0120@gmail.com"
-
-var users sync.Map
-
-func init() {
-	users.Store(kaneshinPrimaryEmail, User{
-		PrimaryEmail: kaneshinPrimaryEmail,
-		PrimaryPhone: "+81 90-5583-5803",
-		Name: Name{
-			GivenName:  "Shintaro",
-			FamilyName: "Kaneko",
-			Nickname:   "kaneshin",
-		},
-		Address: Address{
-			State:   "Tokyo",
-			Country: "Japan",
-		},
-		PrimaryOrganization: Organization{
-			Name:        "Eureka, Inc.",
-			Title:       "CTO",
-			Description: "Chief Technology Officer",
-		},
-	})
-}
-
-func usersHandler(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-	v, ok := users.Load(vars["id"])
-	if ok {
-		u, ok := v.(User)
-		if ok {
-			u.PrimaryEmail = ""
-			u.PrimaryPhone = ""
-			rndr.JSON(w, http.StatusOK, u)
-			return
-		}
-	}
-	rndr.JSON(w, http.StatusOK, User{})
-}
-
-func photosHandler(w http.ResponseWriter, r *http.Request) {
-	rndr.JSON(w, http.StatusOK, map[string]interface{}{})
-}
 
 func main() {
 	r := mux.NewRouter()
-	r.HandleFunc("/ping", pingHandler).Methods("GET")
-	r.HandleFunc("/directory/v1/users/{id}", usersHandler).Methods("GET")
-	r.HandleFunc("/directory/v1/users/{id}/photos", photosHandler).Methods("GET")
+	r.HandleFunc("/ping", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("pong"))
+	}).Methods("GET")
+
+	r.HandleFunc("/status/{code}", func(w http.ResponseWriter, r *http.Request) {
+		vars := mux.Vars(r)
+		switch vars["code"] {
+		case "400":
+			backend.BadRequestResponseWriter(w, "")
+		case "404":
+			backend.NotFoundResponseWriter(w, "")
+		default:
+			backend.BadRequestResponseWriter(w, "Invalid status code")
+		}
+	})
+
+	v1 := r.PathPrefix("/1.0").Subrouter()
+	v1.HandleFunc("/users/{id}", func(w http.ResponseWriter, r *http.Request) {
+		vars := mux.Vars(r)
+		id := vars["id"]
+		backend.UsersResponseWriter(w, id)
+	}).Methods("GET")
+
+	v1.HandleFunc("/posts", func(w http.ResponseWriter, r *http.Request) {
+		backend.PostsResponseWriter(w)
+	}).Methods("GET")
 
 	port := os.Getenv("PORT")
 	if port == "" {

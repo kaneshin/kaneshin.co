@@ -1,31 +1,27 @@
-footer.mb-16
+footer.pb-16
   div.mx-auto.px-6.max-w-screen-xl
 
     div(class="flex flex-col md:flex-row-reverse items-stretch")
 
-      div(class="flex-0 mb-6 md:mb-0")
-        p.mb-5.text-xs RESOURCES
-        ul
-          - var values = {
-          - }
-          each val, key in values
-            li.mb-1
-              a(href=val class="text-lg") #{key}
+      div(class="flex-0 mb-0 md:mb-0")
 
       div(class="flex-1 mb-6 md:mb-0")
         p.mb-5.text-xs ON SOCIAL
         ul
           - var values = {
-          -   GitHub: 'https://github.com/kaneshin',
-          -   Twitter: 'https://twitter.com/kaneshin0120',
-          -   Facebook: 'https://facebook.com/shintaro.kaneko',
-          -   Instagram: 'https://instagram.com/kaneshin0120',
+          -   'GitHub': 'https://github.com/kaneshin',
+          -   'Twitter': 'https://twitter.com/kaneshin0120',
+          -   'Facebook': 'https://facebook.com/shintaro.kaneko',
+          -   'Instagram': 'https://instagram.com/kaneshin0120',
+          -   'Speaker Deck': 'https://speakerdeck.com/kaneshin',
           - }
           each val, key in values
             li.mb-1
               a(href=val class="text-lg") #{key}
 
-      div.flex-1
+      div(class="flex-1 mb-0 md:mb-0")
+
+      div(class="flex-1 mb-6 md:mb-0")
         p.mb-4.text-lg Shintaro Kaneko
         p.text-xs &copy; 2020
 
