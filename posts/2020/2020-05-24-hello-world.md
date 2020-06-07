@@ -3,6 +3,7 @@
 I've created my site using the following tech stacks:
 
 - [Webpack](https://webpack.js.org/)
+- [React](https://reactjs.org/)
 - [Tailwindcss](https://tailwindcss.com/)
 - [Pug](https://pugjs.org/)
 - [Go](https://golang.org/)

@@ -28,6 +28,7 @@
     "pug-loader": "^2.4.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-fade-in": "^1.1.0",
     "sass": "^1.26.7",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
