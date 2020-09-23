@@ -21,6 +21,8 @@ if (!spaceId || !accessToken) {
   throw new Error("Contentful spaceId and the access token need to be provided.");
 }
 
+const exclude = ["/column/dummy/**", "/happy/dummy/**"];
+
 module.exports = {
   siteMetadata: {
     title: "kaneshin.co",
@@ -33,6 +35,56 @@ module.exports = {
   },
   pathPrefix: "/",
   plugins: [
+    {
+      // Make sure this plugin is first in the array of plugins
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-71886081-1",
+        head: false,
+        // Avoids sending pageview hits from custom paths
+        exclude: exclude,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        output: "/sitemap.xml",
+        exclude: exclude,
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+        }`,
+        resolveSiteUrl: ({ site, allSitePage }) => {
+          return site.siteMetadata.siteUrl;
+        },
+        serialize: ({ site, allSitePage }) => {
+          return [
+            {
+              url: site.siteMetadata.siteUrl,
+              changefreq: `daily`,
+              priority: 1.0,
+            },
+          ].concat(
+            allSitePage.nodes.map(node => {
+              return {
+                url: `${site.siteMetadata.siteUrl}${node.path}`,
+                changefreq: `daily`,
+                priority: 1.0,
+              };
+            }),
+          );
+        },
+      },
+    },
     "gatsby-plugin-typescript",
     "gatsby-transformer-remark",
     "gatsby-transformer-sharp",

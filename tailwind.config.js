@@ -1,8 +1,20 @@
 const fontHiragino = ["Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "Hiragino Sans"];
 const fontYuGothic = ["游ゴシック", "YuGothic", "Yu Gothic Medium", "Yu Gothic"];
 const fontMeiryo = ["メイリオ", "Meiryo"];
-// const fontDefault = ['BlinkMacSystemFont', '-apple-system', 'system-ui', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif']
-const fontDefault = ["-apple-system", "system-ui", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", "sans-serif"];
+const fontDefault = [
+  "BlinkMacSystemFont",
+  "-apple-system",
+  "Segoe UI",
+  "Roboto",
+  "Oxygen",
+  "Cantarell",
+  "Fira Sans",
+  "Droid Sans",
+  "Helvetica Neue",
+  "Helvetica",
+  "Arial",
+  "sans-serif",
+];
 
 module.exports = {
   purge: ["./src/**/*.html", "./src/**/*.css", "./src/**/*.js", "./src/**/*.jsx", "./src/**/*.ts", "./src/**/*.tsx"],
@@ -14,10 +26,10 @@ module.exports = {
       xl: "1440px",
     },
     fontFamily: {
-      display: ["Proxima Nova"].concat(fontHiragino).concat(fontDefault),
-      body: ["Proxima Nova"].concat(fontHiragino).concat(fontDefault),
-      mincho: [].concat(fontHiragino).concat(fontYuGothic).concat(fontDefault),
-      proximanova: ["Proxima Nova"].concat(fontHiragino).concat(fontYuGothic).concat(fontDefault),
+      display: ["Lato"].concat(fontDefault),
+      body: ["Lato"].concat(fontDefault),
+      article: ["Lato"].concat(fontHiragino).concat(fontDefault),
+      code: ["Monaco", "Menlo", "monospace"],
     },
     extend: {
       colors: {
