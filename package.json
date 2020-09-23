@@ -23,7 +23,7 @@
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
     "@types/react-helmet": "^6.1.0",
-    "chalk": "^4.0.0",
+    "chalk": "^4.1.0",
     "cheerio": "^1.0.0-rc.3",
     "contentful-import": "^7.7.8",
     "dotenv": "^8.2.0",
