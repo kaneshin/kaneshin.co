@@ -1,0 +1,29 @@
+/* purgecss start ignore */
+@tailwind base;
+
+@import "fonts";
+
+html,
+body {
+  @apply font-body antialiased text-gray-800;
+}
+
+header,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-display antialiased;
+}
+
+p {
+  @apply font-body antialiased;
+}
+
+@import "entry";
+
+@tailwind components;
+/* purgecss end ignore */
+@tailwind utilities;

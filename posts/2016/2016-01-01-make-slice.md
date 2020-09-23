@@ -48,4 +48,3 @@ Simply **Run** the code below.
 <iframe class="w-full h-screen" src="https://play.golang.org/p/LP2EuFT9NLG" frameborder="0">
   <a href="https://play.golang.org/p/f-ChmzkLRF">see this code in play.golang.org</a>
 </iframe>
-
