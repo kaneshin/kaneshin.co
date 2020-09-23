@@ -4,11 +4,12 @@ import { PageRendererProps } from "gatsby";
 import "../../assets/styles/index.scss";
 import HeaderNav from "./header-nav";
 import FooterNav from "./footer-nav";
+import favicon from "../../assets/favicon.ico";
 
 const Layout: React.FC<PageRendererProps> = props => (
   <div>
     <Helmet htmlAttributes={{ lang: "ja" }}>
-      <link rel="icon" />
+      <link rel="icon" href={favicon} />
     </Helmet>
 
     <header className="bg-white w-full">
