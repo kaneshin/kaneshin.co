@@ -1,6 +1,4 @@
 export namespace Contentful {
-  export type id = string;
-
   export type Text = {
     childMarkdownRemark: {
       html: string;
@@ -16,50 +14,17 @@ export namespace Contentful {
     fixed: any;
   };
 
-  export type MediaMetadataModel = {
-    // [INFO] don't use on Gatsby: entryTitle: string
-    description: Text;
-    ogImage: Link;
-    featuredImage: Link;
-    twitterUsername: string;
+  export type TagModel = {
+    title: string;
   };
 
-  export type CategoryModel = {
-    slug: string;
+  export type PostModel = {
     title: string;
-    order: number;
-  };
-
-  export type ColumnModel = {
+    description?: string;
     slug: string;
-    title: string;
     body: Text;
-    category?: CategoryModel[];
     featuredImage?: Link;
+    tags: TagModel[];
     publishDate: string;
-    seoTitle?: string;
-    seoDescription?: Text;
-    seoImage?: Link;
-    disableRegistrationButton?: boolean;
-  };
-
-  export type HappyModel = {
-    title: string;
-    slug: string;
-    interview: string;
-    featuredImage: Link;
-    users: HappyUser[];
-    body: Text;
-    publishDate: string;
-  };
-
-  export type HappyUser = {
-    name: string;
-    age: number;
-    gender: string;
-    period: number;
-    hometown: string;
-    job: string;
-    hobby: string;
   };
 }

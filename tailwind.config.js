@@ -26,9 +26,8 @@ module.exports = {
       xl: "1440px",
     },
     fontFamily: {
-      display: ["Lato"].concat(fontDefault),
-      body: ["Lato"].concat(fontDefault),
-      article: ["Lato"].concat(fontHiragino).concat(fontDefault),
+      display: ["Lato"].concat(fontHiragino).concat(fontDefault),
+      body: ["Lato"].concat(fontHiragino).concat(fontDefault),
       code: ["Monaco", "Menlo", "monospace"],
     },
     extend: {

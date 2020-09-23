@@ -29,7 +29,7 @@ module.exports = {
     titleTemplate: "%s | kaneshin.co",
     navTitle: "HOME",
     pathname: "/",
-    description: "",
+    description: "kaneshin.co",
     siteUrl: "https://kaneshin.co",
     image: "/images/ogp.jpg",
   },

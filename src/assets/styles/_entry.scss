@@ -14,6 +14,14 @@
   }
 }
 
+.entry-article-foot {
+  @apply mx-20px mt-40px;
+
+  @screen sm {
+    @apply mx-0;
+  }
+}
+
 .entry-article-image {
   @apply mb-16px;
   max-width: 100vw;
@@ -32,6 +40,12 @@
     @apply mx-0;
   }
 
+  pre {
+    @apply mb-16px p-16px bg-gray-100 whitespace-pre-wrap;
+    code {
+      @apply font-code;
+    }
+  }
   img {
     @apply mt-16px -mx-20px;
     max-width: 100vw;
@@ -106,6 +120,7 @@
     blockquote {
       @apply mb-20px pl-16px pr-8px py-8px;
     }
+    pre,
     & > p,
     & > div,
     & > ul,
@@ -140,6 +155,6 @@
 
   b,
   strong {
-    @apply text-green-800 font-semibold;
+    @apply font-semibold;
   }
 }
