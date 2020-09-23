@@ -36,7 +36,7 @@
     "gatsby-plugin-typescript": "^2.4.20",
     "gatsby-transformer-remark": "^2.8.35",
     "gatsby-transformer-sharp": "^2.5.15",
-    "inquirer": "^7.1.0",
+    "inquirer": "^7.3.3",
     "jest": "^26.4.2",
     "node-sass": "^4.14.1",
     "prettier": "^2.1.2",
