@@ -9,7 +9,7 @@ interface BlogPostGridProps {
 }
 
 const BlogPostGrid: React.FC<PageRendererProps & BlogPostGridProps> = props => (
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20px">
+  <div className="items-start grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20px">
     {props.articles.map(({ node }: Node<Article>) => (
       <div
         className="col-span-1 shadow-md overflow-hidden hover:shadow-lg transition ease-in-out duration-500"
