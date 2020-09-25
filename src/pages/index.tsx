@@ -42,7 +42,6 @@ const IndexPage: React.FC<PageProps> = props => {
 
       <section className="x-layout max-w-screen-lg">
         <div className="mb-40px">
-          <h2 className="mb-16px md:mb-24px text-32px md:text-40px font-semibold">Blog</h2>
           <BlogPostGrid location={props.location} articles={articles} />
         </div>
       </section>

@@ -22,7 +22,7 @@ export namespace Contentful {
     title: string;
     description?: string;
     slug: string;
-    body: Text;
+    body?: Text;
     featuredImage?: Link;
     tags: TagModel[];
     publishDate: string;

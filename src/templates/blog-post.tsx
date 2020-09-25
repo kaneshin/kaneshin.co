@@ -13,8 +13,8 @@ const BlogPostTemplate: React.FC<PageProps> = props => {
   const metadata: SiteMetadata = get(props, "data.site.siteMetadata");
   const article: Article = get(props, "data.contentfulPost");
 
-  const $ = cheerio.load(article.body.childMarkdownRemark.html);
-  const seoDescription = article.description || ($.text() || "").replace(/\r?\n/g, "");
+  const $ = cheerio.load(article.body?.childMarkdownRemark.html || "");
+  const seoDescription = article.description || ($.text() || "").replace(/\r?\n/g, "") || article.title;
   const seoImage = article.featuredImage?.file?.url || "";
 
   return (
@@ -43,7 +43,9 @@ const BlogPostTemplate: React.FC<PageProps> = props => {
           </div>
         </div>
 
-        <div className="entry-article" dangerouslySetInnerHTML={{ __html: article.body.childMarkdownRemark.html }} />
+        {article.body && (
+          <div className="entry-article" dangerouslySetInnerHTML={{ __html: article.body.childMarkdownRemark.html }} />
+        )}
 
         <div className="entry-article-foot">
           <div className="mb-16px text-13px text-gray-500 flex flex-wrap justify-start">
