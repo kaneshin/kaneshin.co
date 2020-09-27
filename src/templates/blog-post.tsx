@@ -73,6 +73,7 @@ export const pageQuery = graphql`
     }
     contentfulPost(slug: { eq: $slug }) {
       title
+      description
       tags {
         title
       }
