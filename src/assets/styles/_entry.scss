@@ -40,6 +40,9 @@
     @apply mx-0;
   }
 
+  a {
+    @apply underline;
+  }
   pre {
     @apply mb-16px p-16px bg-gray-100 whitespace-pre-wrap;
     code {
