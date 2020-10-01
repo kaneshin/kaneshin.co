@@ -13,11 +13,11 @@ module.exports = ({ graphql, actions }) => {
     component: path.resolve("./src/templates/not-found.tsx"),
   });
 
-  const blogPostTemplate = path.resolve("./src/templates/blog-post.tsx");
+  const postsTemplate = path.resolve("./src/templates/posts.tsx");
 
   return new Promise((resolve, reject) => {
     resolve(
-      // Create "/blog/:slug"
+      // Create "/posts/:slug"
       graphql(`
         {
           allContentfulPost {
@@ -36,8 +36,8 @@ module.exports = ({ graphql, actions }) => {
         const edges = result.data.allContentfulPost.edges;
         edges.forEach(article => {
           createPage({
-            path: path.join("/blog", article.node.slug),
-            component: blogPostTemplate,
+            path: path.join("/posts", article.node.slug),
+            component: postsTemplate,
             context: {
               slug: article.node.slug,
             },

@@ -3,7 +3,7 @@ import { graphql, PageProps } from "gatsby";
 import get from "lodash/get";
 import Layout from "../components/base/layout";
 import SEO from "../components/base/seo";
-import BlogPostGrid from "../components/blog-post-grid";
+import PostGrid from "../components/post-grid";
 import { Node, SiteMetadata } from "../models";
 import { Article } from "../models/article";
 
@@ -42,7 +42,7 @@ const IndexPage: React.FC<PageProps> = props => {
 
       <section className="x-layout max-w-screen-lg">
         <div className="mb-40px">
-          <BlogPostGrid location={props.location} articles={articles} />
+          <PostGrid location={props.location} articles={articles} />
         </div>
       </section>
     </Layout>

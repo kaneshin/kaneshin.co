@@ -4,18 +4,18 @@ import Img from "gatsby-image";
 import { Node } from "../models";
 import { Article, Tag } from "../models/article";
 
-interface BlogPostGridProps {
+interface PostGridProps {
   articles: Node<Article>[];
 }
 
-const BlogPostGrid: React.FC<PageRendererProps & BlogPostGridProps> = props => (
+const PostGrid: React.FC<PageRendererProps & PostGridProps> = props => (
   <div className="items-start grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20px">
     {props.articles.map(({ node }: Node<Article>) => (
       <div
         className="col-span-1 shadow-md overflow-hidden hover:shadow-lg transition ease-in-out duration-500"
         key={node.slug}
       >
-        <Link to={`/blog/${node.slug}`}>
+        <Link to={`/posts/${node.slug}`}>
           <div>
             {node.featuredImage && (
               <Img className="mb-16px w-full h-160px md:h-180px" alt={node.title} fluid={node.featuredImage.fluid} />
@@ -39,4 +39,4 @@ const BlogPostGrid: React.FC<PageRendererProps & BlogPostGridProps> = props => (
   </div>
 );
 
-export default BlogPostGrid;
+export default PostGrid;

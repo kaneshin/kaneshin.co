@@ -9,7 +9,7 @@ import { Article, Tag } from "../models/article";
 
 const cheerio = require("cheerio");
 
-const BlogPostTemplate: React.FC<PageProps> = props => {
+const PostsTemplate: React.FC<PageProps> = props => {
   const metadata: SiteMetadata = get(props, "data.site.siteMetadata");
   const article: Article = get(props, "data.contentfulPost");
 
@@ -61,10 +61,10 @@ const BlogPostTemplate: React.FC<PageProps> = props => {
   );
 };
 
-export default BlogPostTemplate;
+export default PostsTemplate;
 
 export const pageQuery = graphql`
-  query BlogPostTemplateQuery($slug: String!) {
+  query PostsTemplateQuery($slug: String!) {
     site {
       siteMetadata {
         title
