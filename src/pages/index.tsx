@@ -15,8 +15,8 @@ const IndexPage: React.FC<PageProps> = props => {
     <Layout location={props.location}>
       <SEO />
 
-      <section className="x-layout max-w-screen-lg">
-        <div className="my-40px pb-40px grid grid-cols-1 md:grid-cols-3 gap-20px border-b">
+      <section className="x-layout my-40px max-w-screen-lg">
+        <div className="pb-40px grid grid-cols-1 md:grid-cols-3 gap-20px border-b">
           <div className="col-span-1 flex md:flex-col">
             <img className="mb-16px mr-20px h-150px w-150px rounded-full" src="/img/kaneshin.jpg" />
             <div className="mb-16px text-left">
@@ -34,10 +34,8 @@ const IndexPage: React.FC<PageProps> = props => {
         </div>
       </section>
 
-      <section className="x-layout max-w-screen-lg">
-        <div className="mb-40px">
-          <PostGrid location={props.location} articles={latest} />
-        </div>
+      <section className="x-layout my-40px max-w-screen-lg">
+        <PostGrid location={props.location} articles={latest} />
       </section>
     </Layout>
   );

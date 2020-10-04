@@ -13,20 +13,22 @@ const AboutPage: React.FC<PageProps> = props => {
     <Layout location={props.location}>
       <SEO title={page.title} description={page.description} />
 
-      <section className="mb-40px">
-        {page.image && <Img className="w-full h-320px md:h-400px" alt={page.title} fluid={page.image.fluid} />}
+      <section className="x-layout my-40px max-w-screen-lg">
+        <img className="mb-16px mr-20px h-150px w-150px rounded-full" src="/img/kaneshin.jpg" />
+        <div className="mb-16px text-left">
+          <h2 className="text-20px font-bold">Shintaro Kaneko</h2>
+          <p className="mb-8px">Tokyo, Japan</p>
+          <p>
+            Hi, I'm Shintaro Kaneko. Please call me Shin in an English conversation. Experienced Chief Technology
+            Officer with a demonstrated history of working in the internet industry. Skills in Go, C, JavaScript,
+            TypeScript, Swift, Engineering Management, and Mathematics. Strong scientific information technology
+            professional graduated from the Tokyo University of Science.{" "}
+          </p>
+        </div>
       </section>
 
-      <section className="x-layout max-w-screen-lg">
-        <iframe
-          className="mx-auto max-w-screen-sm"
-          src="https://docs.google.com/forms/d/e/1FAIpQLSfIMZe-mlZtwX3qfuWV0dXTqO4WgYstneswXp4lPt1S6siMEQ/viewform?embedded=true"
-          width="100%"
-          height={960}
-          frameBorder={0}
-        >
-          Loading…
-        </iframe>
+      <section className="my-40px">
+        <img className="w-full" src="/img/eureka.jpg" />
       </section>
     </Layout>
   );
