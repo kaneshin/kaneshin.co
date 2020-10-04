@@ -13,15 +13,10 @@ export interface SEOProps {
   article?: boolean;
 }
 
-type Props = SEOProps & {
-  titleTemplate?: string;
-  twitterUsername?: string;
-};
-
 const maxLengthOfTitle = 60;
 const maxLengthOfDescription = 160;
 
-const SEO = (props: Props) => {
+const SEO = (props: SEOProps) => {
   const { pathname } = useLocation();
   const { site } = useStaticQuery(query);
   const siteMetadata: SiteMetadata = site.siteMetadata;
@@ -29,9 +24,10 @@ const SEO = (props: Props) => {
 
   const seo = {
     title: props.title || siteMetadata.title,
-    titleTemplate: props.titleTemplate || siteMetadata.titleTemplate,
+    titleTemplate: siteMetadata.titleTemplate,
     description: props.description || siteMetadata.description,
     image: props.image || siteMetadata.image,
+    twitterUsername: siteMetadata.twitterUsername,
     url: joinSafety(siteUrl, pathname),
   };
 
@@ -60,7 +56,7 @@ const SEO = (props: Props) => {
 
       <meta name="twitter:card" content="summary_large_image" />
 
-      {props.twitterUsername && <meta name="twitter:creator" content={props.twitterUsername} />}
+      {seo.twitterUsername && <meta name="twitter:creator" content={seo.twitterUsername} />}
 
       {seo.title && <meta name="twitter:title" content={parsedTitle} />}
 
@@ -82,6 +78,7 @@ const query = graphql`
         description
         siteUrl
         image
+        twitterUsername
       }
     }
   }

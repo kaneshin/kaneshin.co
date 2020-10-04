@@ -54,7 +54,7 @@
     max-width: 100vw;
   }
   blockquote {
-    @apply mb-16px pl-16px pr-8px py-8px bg-gray-100 border-l-4 border-gray-200;
+    @apply mb-16px pl-16px pr-8px py-8px bg-gray-100 border-l-4;
     p {
       @apply inline;
     }

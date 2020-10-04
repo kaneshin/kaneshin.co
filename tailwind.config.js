@@ -30,34 +30,13 @@ module.exports = {
       body: ["Lato"].concat(fontHiragino).concat(fontDefault),
       code: ["Monaco", "Menlo", "monospace"],
     },
+    borderColor: theme => ({
+      ...theme("colors"),
+      default: theme("colors.gray.200", "currentColor"),
+    }),
     extend: {
       colors: {
-        red: {
-          800: "#FC6775",
-          900: "#FC6775",
-        },
-        green: {
-          100: "#D4F7E5",
-          200: "#A9EECB",
-          300: "#7FE6B1",
-          400: "#34DA9E",
-          500: "#34DA9E",
-          600: "#1ACE91",
-          700: "#1ACE91",
-          800: "#00C184",
-          900: "#00C184",
-        },
-        gray: {
-          100: "#F9FAFA",
-          200: "#EBECED",
-          300: "#D8D8D8",
-          400: "#ACB1B5",
-          500: "#8D9399",
-          600: "#7D7D7D",
-          700: "#494A4B",
-          800: "#3E4448",
-          900: "#3E4448",
-        },
+        primary: "#DB4437",
       },
       opacity: {
         0: "0",

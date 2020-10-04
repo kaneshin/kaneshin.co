@@ -4,13 +4,11 @@ import Img from "gatsby-image";
 import get from "lodash/get";
 import Layout from "../components/base/layout";
 import SEO from "../components/base/seo";
-import { SiteMetadata } from "../models";
-import { Article, Tag } from "../models/article";
+import { Article, Tag } from "../models";
 
 const cheerio = require("cheerio");
 
 const PostsTemplate: React.FC<PageProps> = props => {
-  const metadata: SiteMetadata = get(props, "data.site.siteMetadata");
   const article: Article = get(props, "data.contentfulPost");
 
   const $ = cheerio.load(article.body?.childMarkdownRemark.html || "");
@@ -19,13 +17,7 @@ const PostsTemplate: React.FC<PageProps> = props => {
 
   return (
     <Layout location={props.location}>
-      <SEO
-        title={article.title}
-        titleTemplate={metadata.titleTemplate}
-        description={seoDescription}
-        image={seoImage}
-        article={true}
-      />
+      <SEO title={article.title} description={seoDescription} image={seoImage} article={true} />
 
       <div className="mx-auto pt-24px mb-64px max-w-screen-sm">
         {article.featuredImage && (
@@ -65,12 +57,6 @@ export default PostsTemplate;
 
 export const pageQuery = graphql`
   query PostsTemplateQuery($slug: String!) {
-    site {
-      siteMetadata {
-        title
-        titleTemplate
-      }
-    }
     contentfulPost(slug: { eq: $slug }) {
       title
       description

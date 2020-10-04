@@ -6,7 +6,7 @@ import SEO from "../components/base/seo";
 const NotFoundPage: React.FC<PageProps> = props => {
   return (
     <Layout location={props.location}>
-      <SEO title="記事が見つかりませんでした。" description="記事が見つかりませんでした。" />
+      <SEO title="404 Not Found" />
 
       <div className="mx-auto px-20px md:px-32px max-w-screen-md">
         <div className="pt-60px pb-40px md:h-400px flex items-center">

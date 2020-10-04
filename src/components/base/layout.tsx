@@ -13,14 +13,14 @@ const Layout: React.FC<PageRendererProps> = props => (
     </Helmet>
 
     <header className="bg-white w-full">
-      <div className="x-layout max-w-screen-xl">
+      <div className="x-layout max-w-screen-lg">
         <HeaderNav />
       </div>
     </header>
 
     <>{props.children}</>
 
-    <footer className="bg-white w-full">
+    <footer className="mb-60px bg-white w-full">
       <div className="x-layout max-w-screen-lg">
         <FooterNav />
       </div>

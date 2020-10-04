@@ -27,4 +27,10 @@ export namespace Contentful {
     tags: TagModel[];
     publishDate: string;
   };
+
+  export type Page = {
+    title: string;
+    description: string;
+    image?: Link;
+  };
 }

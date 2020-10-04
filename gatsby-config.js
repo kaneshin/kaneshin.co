@@ -27,11 +27,11 @@ module.exports = {
   siteMetadata: {
     title: "kaneshin.co",
     titleTemplate: "%s | kaneshin.co",
-    navTitle: "HOME",
     pathname: "/",
-    description: "kaneshin.co",
+    description: "Who is kaneshin.",
     siteUrl: "https://kaneshin.co",
-    image: "/images/ogp.jpg",
+    image: "/img/ogp.jpg",
+    twitterUsername: "@kaneshin0120",
   },
   pathPrefix: "/",
   plugins: [
