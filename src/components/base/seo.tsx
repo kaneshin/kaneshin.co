@@ -45,7 +45,7 @@ const SEO = (props: SEOProps) => {
 
       {seo.url && <meta property="og:url" content={seo.url} />}
 
-      {(props.article ? true : null) && <meta property="og:type" content="article" />}
+      <meta property="og:type" content={props.article ? "article" : "website"} />
 
       {seo.title && <meta property="og:title" content={parsedTitle} />}
 
