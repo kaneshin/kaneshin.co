@@ -1,6 +1,5 @@
 import React from "react";
 import { graphql, PageProps } from "gatsby";
-import Img from "gatsby-image";
 import get from "lodash/get";
 import Layout from "../components/base/layout";
 import SEO from "../components/base/seo";

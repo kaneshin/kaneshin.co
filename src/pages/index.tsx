@@ -17,7 +17,7 @@ const IndexPage: React.FC<PageProps> = props => {
 
       <section className="x-layout my-40px max-w-screen-lg">
         <div className="pb-40px grid grid-cols-1 md:grid-cols-3 gap-20px border-b">
-          <div className="col-span-1 flex md:flex-col">
+          <div className="col-span-1 flex flex-col sm:flex-row md:flex-col">
             <img className="mb-16px mr-20px h-150px w-150px rounded-full" src="/img/kaneshin.jpg" />
             <div className="mb-16px text-left">
               <h2 className="text-20px font-bold">Shintaro Kaneko</h2>
