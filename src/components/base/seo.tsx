@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import { useLocation } from "@reach/router";
 import { useStaticQuery, graphql } from "gatsby";
 import { format } from "util";
+import get from "lodash/get";
 import { SiteMetadata } from "../../models";
 import { joinSafety, baseUrl } from "../../utils";
 
@@ -18,9 +19,7 @@ const maxLengthOfDescription = 160;
 
 const SEO = (props: SEOProps) => {
   const { pathname } = useLocation();
-  const { site } = useStaticQuery(query);
-  const siteMetadata: SiteMetadata = site.siteMetadata;
-  const siteUrl: string = siteMetadata.siteUrl;
+  const siteMetadata: SiteMetadata = get(useStaticQuery(query), "site.siteMetadata");
 
   const seo = {
     title: props.title || siteMetadata.title,
@@ -28,7 +27,7 @@ const SEO = (props: SEOProps) => {
     description: props.description || siteMetadata.description,
     image: props.image || siteMetadata.image,
     twitterUsername: siteMetadata.twitterUsername,
-    url: joinSafety(siteUrl, pathname),
+    url: joinSafety(siteMetadata.siteUrl, pathname),
   };
 
   // cut to the limit of strings
@@ -37,7 +36,7 @@ const SEO = (props: SEOProps) => {
   const parsedTitle: string = format(seo.titleTemplate, seo.title);
 
   // append siteUrl protocol or/and hostname if lacking of seo.image info
-  seo.image = baseUrl(seo.image, siteUrl);
+  seo.image = baseUrl(seo.image, siteMetadata.siteUrl);
 
   return (
     <Helmet title={seo.title} titleTemplate={seo.titleTemplate}>

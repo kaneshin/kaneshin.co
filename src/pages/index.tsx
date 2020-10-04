@@ -46,7 +46,7 @@ const IndexPage: React.FC<PageProps> = props => {
 export default IndexPage;
 
 export const pageQuery = graphql`
-  query IndexPageTemplateQuery {
+  query IndexPageQuery {
     allContentfulPost(sort: { fields: [publishDate], order: DESC }) {
       edges {
         node {

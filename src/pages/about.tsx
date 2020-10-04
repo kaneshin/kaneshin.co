@@ -6,7 +6,7 @@ import Layout from "../components/base/layout";
 import SEO from "../components/base/seo";
 import { Page } from "../models";
 
-const ContactPage: React.FC<PageProps> = props => {
+const AboutPage: React.FC<PageProps> = props => {
   const page: Page = get(props, "data.contentfulPage");
 
   return (
@@ -32,11 +32,11 @@ const ContactPage: React.FC<PageProps> = props => {
   );
 };
 
-export default ContactPage;
+export default AboutPage;
 
 export const pageQuery = graphql`
-  query ContactPageQuery {
-    contentfulPage(contentful_id: { eq: "1CuZvFItWucGIcD5RnnAUW" }) {
+  query AboutPageQuery {
+    contentfulPage(contentful_id: { eq: "1gMjLWLsY8Eq2CTjyLdjE4" }) {
       title
       description
       image {

@@ -5,7 +5,10 @@ interface NavItem {
   to: string;
   title: string;
 }
-const siteItems: NavItem[] = [{ to: "/contact", title: "Contact" }];
+const siteItems: NavItem[] = [
+  { to: "/about", title: "About" },
+  { to: "/contact", title: "Contact" },
+];
 
 const socialItems: NavItem[] = [
   { to: "https://github.com/kaneshin", title: "GitHub" },
