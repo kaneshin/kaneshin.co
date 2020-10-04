@@ -7,9 +7,9 @@ import PostGrid from "../components/post-grid";
 import { Node, Article } from "../models";
 
 const IndexPage: React.FC<PageProps> = props => {
-  const articles: Node<Article>[] = get(props, "data.allContentfulPost.edges");
-  const top: Node<Article>[] = articles.slice(0, 1);
-  const latest: Node<Article>[] = articles.slice(1);
+  const articles: Article[] = (get(props, "data.allContentfulPost.edges") as Node<Article>[]).map(v => v.node);
+  const top: Article[] = articles.slice(0, 1);
+  const latest: Article[] = articles.slice(1);
 
   return (
     <Layout location={props.location}>

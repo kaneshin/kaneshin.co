@@ -1,11 +1,10 @@
 import React from "react";
 import { PageRendererProps, Link } from "gatsby";
 import Img from "gatsby-image";
-import { Node } from "../models";
 import { Article, Tag } from "../models";
 
 interface PostGridProps {
-  articles: Node<Article>[];
+  articles: Article[];
   cols?: number | undefined;
 }
 
@@ -25,22 +24,22 @@ const PostGrid: React.FC<PageRendererProps & PostGridProps> = props => {
 
   return (
     <div className={`items-start grid ${gridCols} gap-20px`}>
-      {props.articles.map(({ node }: Node<Article>) => (
+      {props.articles.map((article: Article) => (
         <div
           className="col-span-1 overflow-hidden transition duration-300 ease-in-out hover:opacity-80"
-          key={node.slug}
+          key={article.slug}
         >
-          <Link to={`/posts/${node.slug}`}>
+          <Link to={`/posts/${article.slug}`}>
             <div className="">
-              {node.featuredImage && (
-                <Img className="w-full h-160px md:h-200px" alt={node.title} fluid={node.featuredImage.fluid} />
+              {article.featuredImage && (
+                <Img className="w-full h-160px md:h-200px" alt={article.title} fluid={article.featuredImage.fluid} />
               )}
 
               <div className="pt-16px px-16px border-l border-b border-r">
-                <p className="mb-8px text-18px font-bold">{node.title}</p>
-                {node.description && <p className="mb-16px text-14px font-medium">{node.description}</p>}
+                <p className="mb-8px text-18px font-bold">{article.title}</p>
+                {article.description && <p className="mb-16px text-14px font-medium">{article.description}</p>}
                 <div className="mb-16px text-13px text-gray-500 flex flex-wrap justify-start">
-                  {node.tags?.map(({ title }: Tag) => (
+                  {article.tags?.map(({ title }: Tag) => (
                     <span className="mr-8px leading-relaxed" key={title}>
                       #{title}
                     </span>
