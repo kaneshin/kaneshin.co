@@ -7,6 +7,7 @@ export namespace Contentful {
     childMarkdownRemark: {
       html: string;
       rawMarkdownBody: string;
+      excerpt: string;
     };
   };
 

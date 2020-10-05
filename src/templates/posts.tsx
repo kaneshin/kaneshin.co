@@ -6,13 +6,10 @@ import Layout from "../components/base/layout";
 import SEO from "../components/base/seo";
 import { Article, Tag } from "../models";
 
-const cheerio = require("cheerio");
-
 const PostsTemplate: React.FC<PageProps> = props => {
   const article: Article = get(props, "data.contentfulPost");
 
-  const $ = cheerio.load(article.body?.childMarkdownRemark.html || "");
-  const seoDescription = article.description || ($.text() || "").replace(/\r?\n/g, "") || article.title;
+  const seoDescription = article.description || article.body?.childMarkdownRemark.excerpt || article.title;
   const seoImage = article.featuredImage?.file?.url || "";
 
   return (
@@ -74,6 +71,7 @@ export const pageQuery = graphql`
       }
       body {
         childMarkdownRemark {
+          excerpt(truncate: true, format: PLAIN, pruneLength: 200)
           html
         }
       }

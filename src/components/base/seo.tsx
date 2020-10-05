@@ -15,7 +15,7 @@ export interface SEOProps {
 }
 
 const maxLengthOfTitle = 60;
-const maxLengthOfDescription = 160;
+const maxLengthOfDescription = 240;
 
 const SEO = (props: SEOProps) => {
   const { pathname } = useLocation();
