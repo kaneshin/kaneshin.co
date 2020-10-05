@@ -1,4 +1,8 @@
 export namespace Contentful {
+  export interface Node<T> {
+    node: T;
+  }
+
   export type Text = {
     childMarkdownRemark: {
       html: string;

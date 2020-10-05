@@ -4,10 +4,6 @@ export type Article = Contentful.PostModel;
 export type Tag = Contentful.TagModel;
 export type Page = Contentful.Page;
 
-export interface Node<T> {
-  node: T;
-}
-
 export type PageMetadata = {
   title: string;
   titleTemplate: string;

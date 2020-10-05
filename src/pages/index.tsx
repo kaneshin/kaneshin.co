@@ -4,10 +4,13 @@ import get from "lodash/get";
 import Layout from "../components/base/layout";
 import SEO from "../components/base/seo";
 import PostGrid from "../components/post-grid";
-import { Node, Article } from "../models";
+import { Article } from "../models";
+import { Contentful } from "../models/contentful";
 
 const IndexPage: React.FC<PageProps> = props => {
-  const articles: Article[] = (get(props, "data.allContentfulPost.edges") as Node<Article>[]).map(v => v.node);
+  const articles: Article[] = (get(props, "data.allContentfulPost.edges") as Contentful.Node<Article>[]).map(
+    v => v.node,
+  );
   const top: Article[] = articles.slice(0, 1);
   const latest: Article[] = articles.slice(1);
 
