@@ -135,7 +135,7 @@ module.exports = {
           },
         ],
         chunkSize: 10000, // default: 1000
-        enablePartialUpdates: true, // default: false
+        enablePartialUpdates: false, // default: false
         matchFields: ["slug", "modified"], // Array<String> default: ['modified']
       },
     },
