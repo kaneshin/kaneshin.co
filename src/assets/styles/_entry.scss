@@ -160,4 +160,8 @@
   strong {
     @apply font-semibold;
   }
+
+  .twitter-tweet.twitter-tweet-rendered {
+    @apply mx-auto;
+  }
 }
