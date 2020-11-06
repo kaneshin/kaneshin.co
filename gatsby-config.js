@@ -22,6 +22,7 @@ if (!spaceId || !accessToken) {
 }
 
 const exclude = ["/column/dummy/**", "/happy/dummy/**"];
+const tailwindConfig = require("./tailwind.config.js");
 
 module.exports = {
   siteMetadata: {
@@ -92,7 +93,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass`,
       options: {
-        postCssPlugins: [require("tailwindcss"), require("./tailwind.config.js")],
+        postCssPlugins: [require("tailwindcss")(tailwindConfig)],
       },
     },
     {
