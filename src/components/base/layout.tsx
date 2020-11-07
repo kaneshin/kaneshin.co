@@ -10,9 +10,6 @@ const Layout: React.FC<PageRendererProps> = props => (
   <div>
     <Helmet>
       <link rel="icon" href={favicon} />
-      <style type="text/css">{`
-        @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
-    `}</style>
     </Helmet>
 
     <header className="bg-white w-full">
