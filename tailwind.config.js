@@ -40,6 +40,7 @@ module.exports = {
         facebook: "#3975E9",
         twitter: "#1DA1F2",
         hatena: "#00A4DE",
+        linkedin: "#0E76A8",
       },
       opacity: {
         0: "0",

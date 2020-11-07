@@ -47,6 +47,13 @@ const PostsTemplate: React.FC<PageProps> = props => {
       url.searchParams.set("url", link);
       window.open(url.toString());
     },
+    linkedin: () => {
+      const url = new URL("https://www.linkedin.com/sharing/share-offsite");
+      url.searchParams.set("mini", "true");
+      url.searchParams.set("url", link);
+      url.searchParams.set("title", article.title);
+      window.open(url.toString());
+    },
   };
 
   return (
@@ -60,14 +67,7 @@ const PostsTemplate: React.FC<PageProps> = props => {
 
         <div className="entry-article-head">
           <h1>{article.title}</h1>
-          <div className="mt-20px mb-20px flex items-center">
-            <img className="w-40px h-40px rounded-full mr-12px" src="/img/kaneshin.jpg" />
-            <div className="text-14px">
-              <p className="">Shintaro Kaneko</p>
-              <p className="text-gray-500">{article.publishDate}</p>
-            </div>
-          </div>
-          <div className="mb-16px text-13px text-gray-500 flex flex-wrap justify-start">
+          <div className="mb-20px text-13px text-gray-500 flex flex-wrap justify-start">
             {article.tags?.map(({ title }: Tag) => (
               <span className="mr-8px leading-relaxed" key={title}>
                 #{title}
@@ -81,7 +81,7 @@ const PostsTemplate: React.FC<PageProps> = props => {
         )}
 
         <div className="entry-article-foot">
-          <div className="w-160px flex justify-between text-white text-20px text-center">
+          <div className="w-204px mb-40px flex justify-between text-white text-20px text-center">
             <div
               className="bg-facebook flex items-center justify-center w-40px h-40px pt-2px rounded-full"
               role="button"
@@ -99,12 +99,28 @@ const PostsTemplate: React.FC<PageProps> = props => {
             </div>
 
             <div
-              className="bg-hatena flex items-center justify-center w-40px h-40px pb-2px pl-2px font-bold rounded-full"
+              className="bg-hatena flex items-center justify-center w-40px h-40px font-bold rounded-full"
               style={{ fontFamily: "Verdana" }}
               role="button"
               onClick={share.hatena}
             >
               B!
+            </div>
+
+            <div
+              className="bg-linkedin flex items-center justify-center w-40px h-40px rounded-full"
+              role="button"
+              onClick={share.linkedin}
+            >
+              <i className="fab fa-linkedin-in"></i>
+            </div>
+          </div>
+
+          <div className="mb-40px flex items-center">
+            <img className="w-40px h-40px rounded-full mr-12px" src="/img/kaneshin.jpg" />
+            <div className="text-14px">
+              <p className="">Shintaro Kaneko</p>
+              <p className="text-gray-500">{article.publishDate}</p>
             </div>
           </div>
         </div>
