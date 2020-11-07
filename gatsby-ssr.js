@@ -30,6 +30,7 @@ exports.onRenderBody = ({ setHeadComponents, setHtmlAttributes, setPreBodyCompon
   setHeadComponents([
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />,
     <script key="font-awesome" src="https://kit.fontawesome.com/fc2c56537d.js" crossOrigin="anonymous"></script>,
+    <script key="hatena-bookmark" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async={true} crossOrigin="anonymous"></script>
   ]);
   setPreBodyComponents([facebookSdkComponent]);
 };

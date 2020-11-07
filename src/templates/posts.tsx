@@ -15,17 +15,31 @@ const PostsTemplate: React.FC<PageProps> = props => {
   const seoDescription = article.description || article.body?.childMarkdownRemark.excerpt || article.title;
   const seoImage = article.featuredImage?.file?.url || "";
 
+  const link = joinSafety(siteMetadata.siteUrl, pathname);
   const share = {
     facebook: () => {
       FB.ui({
         display: "popup",
         method: "share",
-        href: joinSafety(siteMetadata.siteUrl, pathname),
+        href: link,
       });
     },
     twitter: () => {
+      const url = new URL("https://twitter.com/intent/tweet");
+      url.searchParams.set("hashtags", article.tags?.map(({ title }: Tag) => {
+        return title;
+      }).join(','));
+      url.searchParams.set("original_referer", siteMetadata.siteUrl);
+      url.searchParams.set("ref_src", "twsrc^tfw");
+      url.searchParams.set("text", article.title);
+      url.searchParams.set("tw_p", "tweetbutton");
+      url.searchParams.set("url", link);
+      url.searchParams.set("via", siteMetadata.twitterUsername.slice(1));
+      window.location.href = url.toString();
     },
     hatena: () => {
+      const url = `https://b.hatena.ne.jp/entry/${link.replace(/https:\/\//, "s/")}`;
+      window.location.href = url.toString();
     }
   }
 
@@ -66,9 +80,11 @@ const PostsTemplate: React.FC<PageProps> = props => {
             <div className="bg-facebook flex items-center justify-center w-40px h-40px pt-2px rounded-full" role="button" onClick={share.facebook}>
               <i className="fab fa-facebook-f"></i>
             </div>
+
             <div className="bg-twitter flex items-center justify-center w-40px h-40px pt-2px pl-2px rounded-full" role="button" onClick={share.twitter}>
               <i className="fab fa-twitter"></i>
             </div>
+
             <div className="bg-hatena flex items-center justify-center w-40px h-40px pb-2px pl-2px font-bold rounded-full" style={{fontFamily: "Verdana" }} role="button" onClick={share.hatena}>
               B!
             </div>
@@ -86,6 +102,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         siteUrl
+        twitterUsername
       }
     }
     contentfulPost(slug: { eq: $slug }) {
