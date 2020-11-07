@@ -16,7 +16,6 @@ export interface SEOProps {
 
 const maxLengthOfTitle = 60;
 const maxLengthOfDescription = 240;
-const fbAppId = "822757664484359";
 
 export default (props: SEOProps) => {
   const { pathname } = useLocation();
@@ -44,21 +43,16 @@ export default (props: SEOProps) => {
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
 
-      {fbAppId && <meta property="fb:app_id" content={fbAppId} />}
       {seo.url && <meta property="og:url" content={seo.url} />}
       <meta property="og:type" content={props.article ? "article" : "website"} />
       {seo.title && <meta property="og:title" content={parsedTitle} />}
       {seo.description && <meta property="og:description" content={seo.description} />}
       {seo.image && <meta property="og:image" content={seo.image} />}
 
-      <meta name="twitter:card" content="summary_large_image" />
-
       {seo.twitterUsername && <meta name="twitter:creator" content={seo.twitterUsername} />}
-
+      <meta name="twitter:card" content="summary_large_image" />
       {seo.title && <meta name="twitter:title" content={parsedTitle} />}
-
       {seo.description && <meta name="twitter:description" content={seo.description} />}
-
       {seo.image && <meta name="twitter:image" content={seo.image} />}
     </Helmet>
   );

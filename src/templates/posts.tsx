@@ -1,33 +1,29 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { useLocation } from "@reach/router";
 import { graphql, PageProps } from "gatsby";
 import Img from "gatsby-image";
 import get from "lodash/get";
 import Layout from "../components/base/layout";
 import SEO from "../components/base/seo";
 import { Article, Tag } from "../models";
+import { joinSafety } from "../utils";
 
-const PostsTemplate: React.FC<PageProps> = props => {
+interface PostsContext {
+  slug: string;
+}
+
+const PostsTemplate: React.FC<PageProps<{}, PostsContext>> = props => {
+  const { pathname } = useLocation();
   const article: Article = get(props, "data.contentfulPost");
-
   const seoDescription = article.description || article.body?.childMarkdownRemark.excerpt || article.title;
   const seoImage = article.featuredImage?.file?.url || "";
 
-  useEffect(() => {
-    window.FB.init({
-      appId: "822757664484359",
-      autoLogAppEvents: true,
-      xfbml: true,
-      version: "v8.0",
+  const facebookShare = () => {
+    FB.ui({
+      display: "popup",
+      method: "share",
+      href: joinSafety("https://kaneshin.co", pathname),
     });
-  });
-
-  const fbShare = () => {
-    FB.ui(
-      {
-        method: "share",
-      },
-      function (response) {},
-    );
   };
 
   return (
@@ -54,7 +50,8 @@ const PostsTemplate: React.FC<PageProps> = props => {
           <div className="entry-article" dangerouslySetInnerHTML={{ __html: article.body.childMarkdownRemark.html }} />
         )}
 
-        <div className="bg-green-200 w-200px h-200px" role="button" onClick={fbShare} />
+        <div className="bg-green-200 w-200px h-100px" role="button" onClick={facebookShare} />
+
         <div className="entry-article-foot">
           <div className="mb-16px text-13px text-gray-500 flex flex-wrap justify-start">
             {article.tags?.map(({ title }: Tag) => (

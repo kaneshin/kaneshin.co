@@ -15,4 +15,5 @@ export type SiteMetadata = {
   siteUrl: string;
   image: string;
   twitterUsername: string;
+  facebookAppId: string;
 } & PageMetadata;

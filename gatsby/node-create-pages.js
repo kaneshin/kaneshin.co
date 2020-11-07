@@ -35,12 +35,11 @@ module.exports = ({ graphql, actions }) => {
         }
         const edges = result.data.allContentfulPost.edges;
         edges.forEach(article => {
+          const slug = article.node.slug;
           createPage({
-            path: path.join("/posts", article.node.slug),
+            path: path.join("/posts", slug),
             component: postsTemplate,
-            context: {
-              slug: article.node.slug,
-            },
+            context: { slug },
           });
         });
       }),
