@@ -8,11 +8,7 @@ import SEO from "../components/base/seo";
 import { SiteMetadata, Article, Tag } from "../models";
 import { joinSafety } from "../utils";
 
-interface PostsContext {
-  slug: string;
-}
-
-const PostsTemplate: React.FC<PageProps<{}, PostsContext>> = props => {
+const PostsTemplate: React.FC<PageProps> = props => {
   const { pathname } = useLocation();
   const siteMetadata: SiteMetadata = get(props, "data.site.siteMetadata");
   const article: Article = get(props, "data.contentfulPost");
