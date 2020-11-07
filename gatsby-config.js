@@ -100,45 +100,5 @@ module.exports = {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,
     },
-    {
-      // This plugin must be placed last in your list of plugins to ensure that it can query all the GraphQL data
-      resolve: `gatsby-plugin-algolia`,
-      options: {
-        appId: process.env.ALGOLIA_APP_ID,
-        // Use Admin API key without GATSBY_ prefix, so that the key isn't exposed in the application
-        // Tip: use Search API key with GATSBY_ prefix to access the service from within components
-        apiKey: process.env.ALGOLIA_API_KEY,
-        indexName: process.env.ALGOLIA_INDEX_NAME, // for all queries
-        queries: [
-          {
-            query: `{
-              allContentfulPost {
-                edges {
-                  node {
-                    objectID: slug
-                    title
-                    description
-                    tags {
-                      title
-                    }
-                    body {
-                      childMarkdownRemark {
-                        excerpt(truncate: true, format: PLAIN, pruneLength: 200)
-                        html
-                      }
-                    }
-                  }
-                }
-              }
-            }`,
-            transformer: ({ data }) => data.allContentfulPost.edges.map(({ node }) => node),
-            settings: {},
-          },
-        ],
-        chunkSize: 10000, // default: 1000
-        enablePartialUpdates: false, // default: false
-        matchFields: ["slug", "modified"], // Array<String> default: ['modified']
-      },
-    },
   ],
 };
