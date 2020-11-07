@@ -23,7 +23,7 @@ export default () => (
       <ul className="text-18px font-medium">
         {socialItems.map((item: NavItem) => (
           <li className="mb-6px" key={item.to}>
-            <Link to={item.to}>{item.title}</Link>
+            <a href={item.to}>{item.title}</a>
           </li>
         ))}
       </ul>
