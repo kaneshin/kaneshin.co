@@ -44,9 +44,14 @@
     @apply underline;
   }
   pre {
-    @apply mb-16px p-16px bg-gray-100 whitespace-pre-wrap;
+    @apply mb-16px p-16px text-14px whitespace-pre-wrap;
     code {
       @apply font-code;
+    }
+  }
+  p {
+    code {
+      @apply px-8px;
     }
   }
   img {

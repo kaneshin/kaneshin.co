@@ -60,7 +60,7 @@ const PostsTemplate: React.FC<PageProps> = props => {
     <Layout location={props.location}>
       <SEO title={article.title} description={seoDescription} image={seoImage} article={true} />
 
-      <div className="mx-auto pt-24px mb-64px max-w-screen-sm">
+      <div className="mx-auto pt-24px mb-64px max-w-screen-md">
         {article.featuredImage && (
           <Img className="entry-article-image" alt={article.title} fluid={article.featuredImage.fluid} />
         )}
