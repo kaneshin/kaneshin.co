@@ -31,6 +31,7 @@
     "gatsby-plugin-react-helmet": "^3.3.11",
     "gatsby-plugin-sass": "^2.3.13",
     "gatsby-plugin-sitemap": "^2.4.13",
+    "gatsby-plugin-twitter": "^2.3.12",
     "gatsby-plugin-typescript": "^2.4.20",
     "gatsby-transformer-remark": "^2.8.35",
     "inquirer": "^7.3.3",

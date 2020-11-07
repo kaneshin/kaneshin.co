@@ -16,8 +16,9 @@ export interface SEOProps {
 
 const maxLengthOfTitle = 60;
 const maxLengthOfDescription = 240;
+const fbAppId = "822757664484359";
 
-const SEO = (props: SEOProps) => {
+export default (props: SEOProps) => {
   const { pathname } = useLocation();
   const siteMetadata: SiteMetadata = get(useStaticQuery(query), "site.siteMetadata");
 
@@ -43,14 +44,11 @@ const SEO = (props: SEOProps) => {
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
 
+      {fbAppId && <meta property="fb:app_id" content={fbAppId} />}
       {seo.url && <meta property="og:url" content={seo.url} />}
-
       <meta property="og:type" content={props.article ? "article" : "website"} />
-
       {seo.title && <meta property="og:title" content={parsedTitle} />}
-
       {seo.description && <meta property="og:description" content={seo.description} />}
-
       {seo.image && <meta property="og:image" content={seo.image} />}
 
       <meta name="twitter:card" content="summary_large_image" />
@@ -65,8 +63,6 @@ const SEO = (props: SEOProps) => {
     </Helmet>
   );
 };
-
-export default SEO;
 
 const query = graphql`
   query SEO {

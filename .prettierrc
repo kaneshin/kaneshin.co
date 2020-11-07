@@ -2,5 +2,13 @@
   "semi": true,
   "trailingComma": "all",
   "arrowParens": "avoid",
-  "printWidth": 120
+  "printWidth": 120,
+  "overrides": [
+    {
+      "files": ["*.html", "*.scss"],
+      "options": {
+        "tabWidth": 2
+      }
+    }
+  ]
 }

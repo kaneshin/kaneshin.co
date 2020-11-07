@@ -8,7 +8,7 @@ import favicon from "../../assets/favicon.ico";
 
 const Layout: React.FC<PageRendererProps> = props => (
   <div>
-    <Helmet htmlAttributes={{ lang: "ja" }}>
+    <Helmet>
       <link rel="icon" href={favicon} />
       <style type="text/css">{`
         @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");

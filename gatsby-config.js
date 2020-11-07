@@ -86,6 +86,7 @@ module.exports = {
         },
       },
     },
+    "gatsby-plugin-twitter",
     "gatsby-plugin-typescript",
     "gatsby-transformer-remark",
     "gatsby-plugin-react-helmet",

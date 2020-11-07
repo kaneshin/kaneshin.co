@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { graphql, PageProps } from "gatsby";
 import Img from "gatsby-image";
 import get from "lodash/get";
@@ -11,6 +11,24 @@ const PostsTemplate: React.FC<PageProps> = props => {
 
   const seoDescription = article.description || article.body?.childMarkdownRemark.excerpt || article.title;
   const seoImage = article.featuredImage?.file?.url || "";
+
+  useEffect(() => {
+    window.FB.init({
+      appId: "822757664484359",
+      autoLogAppEvents: true,
+      xfbml: true,
+      version: "v8.0",
+    });
+  });
+
+  const fbShare = () => {
+    FB.ui(
+      {
+        method: "share",
+      },
+      function (response) {},
+    );
+  };
 
   return (
     <Layout location={props.location}>
@@ -36,6 +54,7 @@ const PostsTemplate: React.FC<PageProps> = props => {
           <div className="entry-article" dangerouslySetInnerHTML={{ __html: article.body.childMarkdownRemark.html }} />
         )}
 
+        <div className="bg-green-200 w-200px h-200px" role="button" onClick={fbShare} />
         <div className="entry-article-foot">
           <div className="mb-16px text-13px text-gray-500 flex flex-wrap justify-start">
             {article.tags?.map(({ title }: Tag) => (
