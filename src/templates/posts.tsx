@@ -15,13 +15,19 @@ const PostsTemplate: React.FC<PageProps> = props => {
   const seoDescription = article.description || article.body?.childMarkdownRemark.excerpt || article.title;
   const seoImage = article.featuredImage?.file?.url || "";
 
-  const facebookShare = () => {
-    FB.ui({
-      display: "popup",
-      method: "share",
-      href: joinSafety(siteMetadata.siteUrl, pathname),
-    });
-  };
+  const share = {
+    facebook: () => {
+      FB.ui({
+        display: "popup",
+        method: "share",
+        href: joinSafety(siteMetadata.siteUrl, pathname),
+      });
+    },
+    twitter: () => {
+    },
+    hatena: () => {
+    }
+  }
 
   return (
     <Layout location={props.location}>
@@ -34,28 +40,38 @@ const PostsTemplate: React.FC<PageProps> = props => {
 
         <div className="entry-article-head">
           <h1>{article.title}</h1>
-          <div className="mt-20px mb-20px md:mb-40px flex items-center">
+          <div className="mt-20px mb-20px flex items-center">
             <img className="w-40px h-40px rounded-full mr-12px" src="/img/kaneshin.jpg" />
             <div className="text-14px">
               <p className="">Shintaro Kaneko</p>
               <p className="text-gray-500">{article.publishDate}</p>
             </div>
           </div>
-        </div>
-
-        {article.body && (
-          <div className="entry-article" dangerouslySetInnerHTML={{ __html: article.body.childMarkdownRemark.html }} />
-        )}
-
-        <div className="bg-green-200 w-200px h-100px" role="button" onClick={facebookShare} />
-
-        <div className="entry-article-foot">
           <div className="mb-16px text-13px text-gray-500 flex flex-wrap justify-start">
             {article.tags?.map(({ title }: Tag) => (
               <span className="mr-8px leading-relaxed" key={title}>
                 #{title}
               </span>
             ))}
+          </div>
+
+        </div>
+
+        {article.body && (
+          <div className="entry-article" dangerouslySetInnerHTML={{ __html: article.body.childMarkdownRemark.html }} />
+        )}
+
+        <div className="entry-article-foot">
+          <div className="flex justify-between w-160px text-white text-20px text-center">
+            <div className="bg-facebook flex items-center justify-center w-40px h-40px pt-2px rounded-full" role="button" onClick={share.facebook}>
+              <i className="fab fa-facebook-f"></i>
+            </div>
+            <div className="bg-twitter flex items-center justify-center w-40px h-40px pt-2px pl-2px rounded-full" role="button" onClick={share.twitter}>
+              <i className="fab fa-twitter"></i>
+            </div>
+            <div className="bg-hatena flex items-center justify-center w-40px h-40px pb-2px pl-2px font-bold rounded-full" style={{fontFamily: "Verdana" }} role="button" onClick={share.hatena}>
+              B!
+            </div>
           </div>
         </div>
       </div>

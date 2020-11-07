@@ -37,6 +37,9 @@ module.exports = {
     extend: {
       colors: {
         primary: "#DB4437",
+        facebook: "#3975E9",
+        twitter: "#1DA1F2",
+        hatena: "#00A4DE",
       },
       opacity: {
         0: "0",

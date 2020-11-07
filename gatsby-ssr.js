@@ -29,6 +29,7 @@ exports.onRenderBody = ({ setHeadComponents, setHtmlAttributes, setPreBodyCompon
   setHtmlAttributes({ lang: "ja" });
   setHeadComponents([
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />,
+    <script key="font-awesome" src="https://kit.fontawesome.com/fc2c56537d.js" crossOrigin="anonymous"></script>,
   ]);
   setPreBodyComponents([facebookSdkComponent]);
 };
