@@ -1,7 +1,5 @@
 const React = require("react");
 
-const HeadComponents = [];
-
 const facebookSdkOptions = {
   appId: "822757664484359",
   autoLogAppEvents: true,
@@ -29,6 +27,8 @@ const facebookSdkComponent = (
 
 exports.onRenderBody = ({ setHeadComponents, setHtmlAttributes, setPreBodyComponents }, pluginOptions) => {
   setHtmlAttributes({ lang: "ja" });
-  setHeadComponents(HeadComponents);
+  setHeadComponents([
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />,
+  ]);
   setPreBodyComponents([facebookSdkComponent]);
 };
