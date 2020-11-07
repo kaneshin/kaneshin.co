@@ -5,7 +5,7 @@ import Img from "gatsby-image";
 import get from "lodash/get";
 import Layout from "../components/base/layout";
 import SEO from "../components/base/seo";
-import { Article, Tag } from "../models";
+import { SiteMetadata, Article, Tag } from "../models";
 import { joinSafety } from "../utils";
 
 interface PostsContext {
@@ -14,6 +14,7 @@ interface PostsContext {
 
 const PostsTemplate: React.FC<PageProps<{}, PostsContext>> = props => {
   const { pathname } = useLocation();
+  const siteMetadata: SiteMetadata = get(props, "data.site.siteMetadata");
   const article: Article = get(props, "data.contentfulPost");
   const seoDescription = article.description || article.body?.childMarkdownRemark.excerpt || article.title;
   const seoImage = article.featuredImage?.file?.url || "";
@@ -22,7 +23,7 @@ const PostsTemplate: React.FC<PageProps<{}, PostsContext>> = props => {
     FB.ui({
       display: "popup",
       method: "share",
-      href: joinSafety("https://kaneshin.co", pathname),
+      href: joinSafety(siteMetadata.siteUrl, pathname),
     });
   };
 
@@ -70,6 +71,11 @@ export default PostsTemplate;
 
 export const pageQuery = graphql`
   query PostsTemplateQuery($slug: String!) {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
     contentfulPost(slug: { eq: $slug }) {
       title
       description
