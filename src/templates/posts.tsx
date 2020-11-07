@@ -30,23 +30,22 @@ const PostsTemplate: React.FC<PageProps> = props => {
         "hashtags",
         article.tags
           ?.map(({ title }: Tag) => {
-            return title;
+            return title.toLowerCase();
           })
           .join(","),
       );
       url.searchParams.set("original_referer", siteMetadata.siteUrl);
-      url.searchParams.set("ref_src", "twsrc^tfw");
       url.searchParams.set("text", article.title);
-      url.searchParams.set("tw_p", "tweetbutton");
       url.searchParams.set("url", link);
       if (siteMetadata.twitterUsername && siteMetadata.twitterUsername.slice) {
         url.searchParams.set("via", siteMetadata.twitterUsername.slice(1));
       }
-      window.location.href = url.toString();
+      window.open(url.toString());
     },
     hatena: () => {
-      const url = `https://b.hatena.ne.jp/entry/${link.replace(/https:\/\//, "s/")}`;
-      window.location.href = url.toString();
+      const url = new URL("https://b.hatena.ne.jp/entry/panel/");
+      url.searchParams.set("url", link);
+      window.open(url.toString());
     },
   };
 
@@ -82,7 +81,7 @@ const PostsTemplate: React.FC<PageProps> = props => {
         )}
 
         <div className="entry-article-foot">
-          <div className="flex justify-between w-160px text-white text-20px text-center">
+          <div className="w-160px flex justify-between text-white text-20px text-center">
             <div
               className="bg-facebook flex items-center justify-center w-40px h-40px pt-2px rounded-full"
               role="button"
