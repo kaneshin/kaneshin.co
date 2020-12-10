@@ -25,7 +25,7 @@
     "@types/react-dom": "^17.0.0",
     "@types/react-helmet": "^6.1.0",
     "chalk": "^4.1.0",
-    "contentful-import": "^7.9.11",
+    "contentful-import": "^7.9.28",
     "dotenv": "^8.2.0",
     "gatsby-plugin-google-analytics": "^2.3.14",
     "gatsby-plugin-postcss": "^2.3.12",
