@@ -5,7 +5,7 @@
     @apply mb-12px text-24px font-semibold;
   }
 
-  @screen sm {
+  @screen md {
     @apply mx-0;
 
     h1 {
@@ -17,7 +17,7 @@
 .entry-article-foot {
   @apply mx-20px mt-40px;
 
-  @screen sm {
+  @screen md {
     @apply mx-0;
   }
 }
@@ -26,7 +26,7 @@
   @apply mb-16px;
   max-width: 100vw;
 }
-@screen sm {
+@screen md {
   .entry-article-image {
     @apply mb-20px;
     @apply max-w-full;
@@ -36,7 +36,7 @@
 .entry-article {
   @apply text-16px;
   @apply mx-20px;
-  @screen sm {
+  @screen md {
     @apply mx-0;
   }
 
@@ -120,7 +120,7 @@
   h6 {
     @apply text-14px;
   }
-  @screen sm {
+  @screen md {
     img {
       @apply mt-20px mx-0;
       @apply max-w-full;
