@@ -3517,7 +3517,7 @@ browserify-zlib@^0.2.0:
   dependencies:
     pako "~1.0.5"
 
-browserslist@^4.0.0, browserslist@^4.12.0, browserslist@^4.12.2, browserslist@^4.14.5, browserslist@^4.15.0:
+browserslist@^4.0.0, browserslist@^4.12.2, browserslist@^4.14.5, browserslist@^4.15.0:
   version "4.15.0"
   resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.15.0.tgz#3d48bbca6a3f378e86102ffd017d9a03f122bdb0"
   integrity sha512-IJ1iysdMkGmjjYeRlDU8PQejVwxvVO5QOfXH7ylW31GO6LwNRSmm/SgRXtNsEXqMLl2e+2H5eEJ7sfynF8TCaQ==
@@ -3525,6 +3525,17 @@ browserslist@^4.0.0, browserslist@^4.12.0, browserslist@^4.12.2, browserslist@^4
     caniuse-lite "^1.0.30001164"
     colorette "^1.2.1"
     electron-to-chromium "^1.3.612"
+    escalade "^3.1.1"
+    node-releases "^1.1.67"
+
+browserslist@^4.12.0:
+  version "4.16.0"
+  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.16.0.tgz#410277627500be3cb28a1bfe037586fbedf9488b"
+  integrity sha512-/j6k8R0p3nxOC6kx5JGAxsnhc9ixaWJfYc+TNTzxg6+ARaESAvQGV7h0uNOB4t+pLQJZWzcrMxXOxjgsCj3dqQ==
+  dependencies:
+    caniuse-lite "^1.0.30001165"
+    colorette "^1.2.1"
+    electron-to-chromium "^1.3.621"
     escalade "^3.1.1"
     node-releases "^1.1.67"
 
@@ -5598,10 +5609,10 @@ ee-first@1.1.1:
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
-electron-to-chromium@^1.3.612:
-  version "1.3.621"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.621.tgz#0bbe2100ef0b28f88d0b1101fbdf433312f69be0"
-  integrity sha512-FeIuBzArONbAmKmZIsZIFGu/Gc9AVGlVeVbhCq+G2YIl6QkT0TDn2HKN/FMf1btXEB9kEmIuQf3/lBTVAbmFOg==
+electron-to-chromium@^1.3.612, electron-to-chromium@^1.3.621:
+  version "1.3.622"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.622.tgz#9726bd2e67a5462154750ce9701ca6af07d07877"
+  integrity sha512-AJT0Fm1W0uZlMVVkkJrcCVvczDuF8tPm3bwzQf5WO8AaASB2hwTRP7B8pU5rqjireH+ib6am8+hH5/QkXzzYKw==
 
 elegant-spinner@^1.0.1:
   version "1.0.1"
