@@ -17,6 +17,7 @@ const fontDefault = [
 ];
 
 module.exports = {
+  darkMode: "class",
   purge: ["./src/**/*.html", "./src/**/*.css", "./src/**/*.js", "./src/**/*.jsx", "./src/**/*.ts", "./src/**/*.tsx"],
   theme: {
     screens: {
@@ -30,13 +31,18 @@ module.exports = {
       body: ["Lato"].concat(fontHiragino).concat(fontDefault),
       code: ["Monaco", "Menlo", "monospace"],
     },
+    textColor: theme => ({
+      sun: "#E84600",
+      moon: "#FEEF5F",
+      ...theme("colors"),
+      default: theme("colors.gray.800", "currentColor"),
+    }),
     borderColor: theme => ({
       ...theme("colors"),
       default: theme("colors.gray.200", "currentColor"),
     }),
     extend: {
       colors: {
-        primary: "#DB4437",
         facebook: "#3975E9",
         twitter: "#1DA1F2",
         hatena: "#00A4DE",
@@ -56,7 +62,6 @@ module.exports = {
         100: "1",
       },
       fontSize: {
-        // 'Npx': 'Npx'
         ...[...Array(121).keys()].reduce((acc, val, _) => {
           const key = `${val}px`;
           acc[key] = key;
@@ -68,7 +73,6 @@ module.exports = {
         "screen-md": "960px",
         "screen-lg": "1140px",
         "screen-xl": "1440px",
-        // 'Npx': 'Npx'
         ...[...Array(401).keys()].reduce((acc, val, _) => {
           const key = `${val}px`;
           acc[key] = key;

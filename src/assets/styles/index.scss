@@ -3,7 +3,27 @@
 
 html,
 body {
-  @apply font-body antialiased text-gray-800;
+  @apply font-body antialiased;
+}
+
+body,
+header,
+footer {
+  @apply text-gray-800 bg-white;
+}
+html.dark {
+  body,
+  footer {
+    @apply text-white;
+    background-color: #0d1117;
+  }
+  header {
+    @apply text-white;
+    background-color: #161b22;
+  }
+  * {
+    @apply border-gray-700;
+  }
 }
 
 header,

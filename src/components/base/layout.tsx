@@ -12,7 +12,7 @@ const Layout: React.FC<PageRendererProps> = props => (
       <link rel="icon" href={favicon} />
     </Helmet>
 
-    <header className="bg-white w-full">
+    <header className="w-full">
       <div className="x-layout max-w-screen-lg">
         <HeaderNav />
       </div>
@@ -20,7 +20,7 @@ const Layout: React.FC<PageRendererProps> = props => (
 
     <>{props.children}</>
 
-    <footer className="mb-60px bg-white w-full">
+    <footer className="mb-60px w-full">
       <div className="x-layout max-w-screen-lg">
         <FooterNav />
       </div>
