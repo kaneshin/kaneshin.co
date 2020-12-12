@@ -65,6 +65,9 @@
       @apply inline;
     }
   }
+  blockquote.dark {
+    @apply bg-gray-800;
+  }
   & > p,
   & > div {
     @apply mb-16px leading-loose;
