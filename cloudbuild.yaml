@@ -5,6 +5,6 @@ steps:
       - deploy
       - helloworld
       - --source=./internal/functions/translate
-      - --runtime go113
+      - --runtime=go113
       - --trigger-http
 timeout: "1600s"
