@@ -1,10 +1,9 @@
 steps:
   - name: "gcr.io/cloud-builders/gcloud"
     args:
-      - beta
       - functions
       - deploy
-      - subscribe
-      - --stage-bucket=selmertsx-sample-bucket
-      - --trigger-topic=cloud-builds
+      - helloworld
+      - --source=./internal/functions/translate
+      - --trigger-http
 timeout: "1600s"
