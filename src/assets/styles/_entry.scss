@@ -34,6 +34,14 @@
   }
 }
 
+.dark {
+  .entry-article {
+    blockquote {
+      @apply bg-gray-800;
+    }
+  }
+}
+
 .entry-article {
   @apply text-16px;
   @apply mx-20px;
@@ -64,9 +72,6 @@
     p {
       @apply inline;
     }
-  }
-  blockquote.dark {
-    @apply bg-gray-800;
   }
   & > p,
   & > div {
