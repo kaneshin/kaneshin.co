@@ -35,6 +35,10 @@ module.exports = {
     twitterUsername: "@kaneshin0120",
   },
   pathPrefix: "/",
+  flags: {
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PRESERVE_WEBPACK_CACHE: true,
+  },
   plugins: [
     {
       // Make sure this plugin is first in the array of plugins

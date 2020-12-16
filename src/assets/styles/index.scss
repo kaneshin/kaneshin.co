@@ -11,8 +11,11 @@ header,
 footer {
   @apply text-gray-800 bg-white;
 }
+* {
+  @apply border-gray-200;
+}
 
-@mixin dark() {
+html.dark {
   body,
   footer {
     @apply text-white;
@@ -25,14 +28,6 @@ footer {
   * {
     @apply border-gray-700;
   }
-}
-
-html.dark {
-  @include dark();
-}
-
-@media (prefers-color-scheme: dark) {
-  @include dark();
 }
 
 header,
