@@ -1,18 +1,18 @@
 {
-  "name": "gatsby-contentful-starter",
-  "description": "Starter Contentful Gatsby Blog",
+  "name": "kaneshin.co",
+  "description": "Shintaro Kaneko's Blog",
   "version": "1.0.0",
-  "author": "Stefan Judis <stefanjudis@gmail.com>",
+  "author": "Shintaro Kaneko",
   "bugs": {
-    "url": "https://github.com/contentful-userland/gatsby-contentful-starter/issues"
+    "url": "https://github.com/kaneshin/kaneshin.co/issues"
   },
   "dependencies": {
     "gatsby": "^2.29.1",
     "gatsby-image": "^2.8.0",
     "gatsby-source-contentful": "^4.3.0",
     "lodash": "^4.17.20",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
     "react-helmet": "^6.1.0",
     "tailwindcss": "^2.0.2"
   },
@@ -49,22 +49,16 @@
     "typescript": "^4.1.3",
     "yargs-parser": "^20.2.4"
   },
-  "peerDependencies": {
-    "postcss": "^8.2.1"
-  },
   "engines": {
     "node": ">=10.13.0"
   },
-  "homepage": "https://github.com/contentful-userland/gatsby-contentful-starter#readme",
-  "keywords": [
-    "gatsby",
-    "contentful"
-  ],
+  "homepage": "https://github.com/kaneshin/kaneshin.co",
+  "keywords": ["gatsby", "contentful"],
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/contentful-userland/gatsby-contentful-starter.git"
+    "url": "git+https://github.com/kaneshin/kaneshin.co.git"
   },
   "scripts": {
     "setup": "node ./bin/setup.js",
