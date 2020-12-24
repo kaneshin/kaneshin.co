@@ -28,6 +28,7 @@ export namespace Contentful {
     description?: string;
     slug: string;
     body?: Text;
+    external?: string;
     featuredImage?: Link;
     tags: TagModel[];
     publishDate: string;

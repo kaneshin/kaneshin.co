@@ -29,7 +29,7 @@ const PostGrid: React.FC<PageRendererProps & PostGridProps> = props => {
           className="post-grid col-span-1 overflow-hidden transition duration-300 ease-in-out hover:opacity-80"
           key={article.slug}
         >
-          <Link to={`/posts/${article.slug}`}>
+          <Link to={article.external ? article.external : `/posts/${article.slug}`}>
             <div className="border">
               {article.featuredImage && (
                 <Img className="w-full h-160px md:h-200px" alt={article.title} fluid={article.featuredImage.fluid} />

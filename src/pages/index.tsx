@@ -54,6 +54,7 @@ export const pageQuery = graphql`
           title
           description
           slug
+          external
           tags {
             title
           }
