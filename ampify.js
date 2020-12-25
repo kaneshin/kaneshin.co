@@ -3,9 +3,18 @@
 const recursive = require("recursive-readdir");
 const fs = require("fs");
 const ampify = require("ampifyjs");
-
-const GA_TRACKING_ID = "UA-SOME_ANALYTICS_ID-1";
 const sass = require("node-sass");
+
+const plugins = require("./gatsby-config.js")["plugins"];
+let googleAnalyticsOptions = {
+  trackingId: ''
+};
+for (let plugin of plugins) {
+  if (plugin.resolve === 'gatsby-plugin-google-analytics') {
+    googleAnalyticsOptions = plugin.options;
+  }
+}
+const GA_TRACKING_ID = googleAnalyticsOptions.trackingId;
 
 //  The director that we will be creating an amp verion of.
 //  Creating an amp version ultimately means creating an 'amp'

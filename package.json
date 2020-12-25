@@ -68,7 +68,7 @@
     "dev": "gatsby develop",
     "build": "npm run build:gatsby && npm run build:amp",
     "build:gatsby": "gatsby build",
-    "build:amp": "cp -r public .cache/amp && rm -rf .cache/amp/page-data .cache/amp/*.{ico,js,txt,xml,css,json} && mv .cache/amp public/amp && node ampify.js",
+    "build:amp": "rm -rf .cache/amp; cp -r public .cache/amp && rm -rf .cache/amp/page-data .cache/amp/*.{ico,js,txt,xml,css,json} && mv .cache/amp public/amp && NODE_ENV=production node ampify.js",
     "serve": "gatsby serve",
     "test": "jest",
     "postinstall": "node ./bin/hello.js"
