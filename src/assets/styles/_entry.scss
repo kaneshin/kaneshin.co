@@ -43,6 +43,12 @@
 }
 
 .entry-article {
+  .embedly-card {
+    @apply pt-12px px-20px pb-0 bg-white border-l-8;
+  }
+}
+
+.entry-article {
   @apply text-16px;
   @apply mx-20px;
   @screen md {

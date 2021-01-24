@@ -16,6 +16,7 @@ exports.onRenderBody = ({ setHeadComponents, setHtmlAttributes, setPreBodyCompon
       rel="stylesheet"
     />,
     <script key="font-awesome" src="https://kit.fontawesome.com/fc2c56537d.js" crossOrigin="anonymous"></script>,
+    <script key="embedly" async={true} crossOrigin="anonymous" src="//cdn.embedly.com/widgets/platform.js"></script>,
   ]);
   setPreBodyComponents([
     <script
