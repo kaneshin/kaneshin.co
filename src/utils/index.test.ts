@@ -1,20 +1,5 @@
 import * as utils from "../utils";
 
-describe("numberWithCommas", () => {
-  it("should insert commas for a number", () => {
-    expect(utils.numberWithCommas(0)).toBe("0");
-    expect(utils.numberWithCommas(123)).toBe("123");
-    expect(utils.numberWithCommas(1234567890)).toBe("1,234,567,890");
-  });
-
-  it("should insert commas for a string", () => {
-    expect(utils.numberWithCommas("")).toBe("");
-    expect(utils.numberWithCommas("0")).toBe("0");
-    expect(utils.numberWithCommas("123")).toBe("123");
-    expect(utils.numberWithCommas("1234567890")).toBe("1,234,567,890");
-  });
-});
-
 describe("joinSafety", () => {
   describe("when a given string has protocol", () => {
     it("should concatenate pathname properly", () => {

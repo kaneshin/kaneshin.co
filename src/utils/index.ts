@@ -1,9 +1,5 @@
 import path from "path";
 
-export const numberWithCommas = (num: number | string): string => {
-  return ("" + num).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-};
-
 export const joinSafety = (url: string, ...paths: string[]): string => {
   if (RegExp(/^[a-zA-Z]+:\/\//).test(url)) {
     const u = new URL(url);
