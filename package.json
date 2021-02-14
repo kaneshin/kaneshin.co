@@ -17,18 +17,18 @@
     "tailwindcss": "^2.0.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.13",
+    "@babel/core": "^7.12.16",
     "@babel/plugin-proposal-class-properties": "^7.12.13",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.12.15",
-    "@babel/plugin-transform-typescript": "^7.12.13",
-    "@babel/preset-env": "^7.12.13",
+    "@babel/plugin-transform-typescript": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
     "@babel/preset-react": "^7.12.13",
     "@types/facebook-js-sdk": "^3.3.1",
     "@types/jest": "^26.0.20",
-    "@types/node": "^14.14.25",
-    "@types/react": "^17.0.1",
-    "@types/react-dom": "^17.0.0",
+    "@types/node": "^14.14.27",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
     "@types/react-helmet": "^6.1.0",
     "babel-plugin-macros": "^3.0.1",
     "chalk": "^4.1.0",
@@ -51,16 +51,20 @@
     "prettier": "^2.2.1",
     "prismjs": "^1.23.0",
     "recursive-readdir": "^2.2.2",
+    "socket.io": "^2.4.0",
     "ts-jest": "^26.5.1",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.5",
-    "yargs-parser": "^20.2.4"
+    "yargs-parser": "^20.2.5"
   },
   "engines": {
     "node": ">=10.13.0"
   },
   "homepage": "https://github.com/kaneshin/kaneshin.co",
-  "keywords": ["gatsby", "contentful"],
+  "keywords": [
+    "gatsby",
+    "contentful"
+  ],
   "license": "MIT",
   "main": "n/a",
   "repository": {
