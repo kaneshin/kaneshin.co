@@ -1,15 +1,8 @@
 # kaneshin.co
 
-## Powered By
+[My personal portfolio website](https://kaneshin.co) created by Gatsby.
 
-- [Gatsby](http://gatsbyjs.com/)
-- [Contentful](https://www.contentful.com)
-
-## Getting started
-
-See [the official Contentful getting started guide](https://www.contentful.com/developers/docs/tutorials/general/get-started/).
-
-### Install dependencies
+## Installation
 
 ```
 $ npm install
@@ -19,9 +12,7 @@ $ npm install
 
 This project comes with a Contentful setup command `npm run setup`.
 
-This command will ask you for a space ID, and access tokens for the Contentful Management and Delivery API and then import the needed content model into the space you define and write a config file.
-
-## Crucial Commands
+## Commands
 
 ### dev
 
@@ -36,6 +27,10 @@ $ npm run dev -- -H 0.0.0.0 -p 8888
 ### build
 
 Run a production build into `./public`. The result is ready to be put on any static hosting you prefer.
+
+```
+$ npm run build
+```
 
 ### serve
 
@@ -52,6 +47,10 @@ $ NODE_ENV=production npm run serve
 Clean the project's artifcats locally.
 
 If you have any problem when `dev`, `build` or `serve`, run this command.
+
+## Deploy
+
+The repository uses GitHub Actions to upload its artifact to Google Cloud Storage.
 
 ## Author
 
