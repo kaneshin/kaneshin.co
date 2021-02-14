@@ -12,7 +12,17 @@ $ npm install
 
 ### Set up of the needed content model and create a configuration file
 
-This project comes with a Contentful setup command `npm run setup`.
+
+To set up this project you need to provide your Space ID and the belonging API access tokens. You can find all the needed information in your Contentful space setting.
+
+```
+CONTENTFUL_SPACE_ID='[YOUR-CONTENTFUL-SPACE-ID]'
+CONTENTFUL_ACCESS_TOKEN='[YOUR-CONTENTFUL-ACCESS-TOKEN]'
+```
+
+All environment variables will be sourced and made available to gatsby-config.js, gatsby-node.js, etc.
+
+*NOTE: Do NOT commit this file to source control.*
 
 ## Commands
 
