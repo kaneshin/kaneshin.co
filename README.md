@@ -2,6 +2,8 @@
 
 [My personal portfolio website](https://kaneshin.co) created by Gatsby.
 
+- ![Primary workflow - GitHub Actions](https://github.com/kaneshin/kaneshin.co/workflows/Build%20and%20Deploy/badge.svg)
+
 ## Installation
 
 ```
