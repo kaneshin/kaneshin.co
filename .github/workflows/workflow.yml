@@ -11,6 +11,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+      CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+
     strategy:
       matrix:
         node-version:
@@ -38,4 +42,3 @@ jobs:
         run: npm run build
       - name: Deploy
         run: gsutil -m rsync -R output gs://${{ secrets.GCS_BUCKET }}
-
