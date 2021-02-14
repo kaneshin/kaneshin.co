@@ -28,10 +28,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Setup gcloud / gsutil
-        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        uses: google-github-actions/setup-gcloud@master
         with:
-          service_account_key: ${{ secrets.GCS_SA_KEY }}
           project_id: ${{ secrets.GCS_PROJECT }}
+          service_account_key: ${{ secrets.GCS_SA_KEY }}
           export_default_credentials: true
       - name: Cache node modules
         uses: actions/cache@v2
