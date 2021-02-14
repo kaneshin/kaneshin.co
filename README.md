@@ -15,6 +15,9 @@ $ npm install
 
 To set up this project you need to provide your Space ID and the belonging API access tokens. You can find all the needed information in your Contentful space setting.
 
+- `.env.production` for production build
+- `.env.development` for development build
+
 ```
 CONTENTFUL_SPACE_ID='[YOUR-CONTENTFUL-SPACE-ID]'
 CONTENTFUL_ACCESS_TOKEN='[YOUR-CONTENTFUL-ACCESS-TOKEN]'
