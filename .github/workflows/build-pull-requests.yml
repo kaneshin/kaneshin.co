@@ -1,9 +1,10 @@
-name: Build and Deploy
+name: Build new pull requests
 
 on:
   pull_request:
-    branches:
-      - main
+    types:
+      - reopened
+      - opened
 
 jobs:
   build:
@@ -31,4 +32,3 @@ jobs:
         run: npm run test
       - name: Build
         run: npm run build
-
