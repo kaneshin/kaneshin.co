@@ -11,6 +11,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Merge the branch
+
+      - name: Merge pull request
         if: github.event.review.state == 'approved'
-        run: echo "approved"
+        uses: devmasx/merge-branch@v1.3.1
+        with:
+          type: now
+          target_branch: 'main'
+          github_token: ${{ github.token }}
