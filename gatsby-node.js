@@ -51,5 +51,11 @@ exports.onCreateWebpackConfig = ({ stage, getConfig, rules, loaders, actions }) 
       config["devtool"] = false;
     }
   }
+  config["resolve"] = {
+    fallback: {
+      util: require.resolve("util/"),
+      path: require.resolve("path-browserify"),
+    },
+  };
   actions.setWebpackConfig(config);
 };
