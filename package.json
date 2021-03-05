@@ -7,7 +7,7 @@
     "url": "https://github.com/kaneshin/kaneshin.co/issues"
   },
   "dependencies": {
-    "gatsby": "^3.0.1",
+    "gatsby": "^3.0.2",
     "gatsby-image": "^3.0.0",
     "gatsby-source-contentful": "^5.0.0",
     "lodash": "^4.17.21",
