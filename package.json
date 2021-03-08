@@ -31,7 +31,7 @@
     "@types/react-dom": "^17.0.1",
     "@types/react-helmet": "^6.1.0",
     "babel-plugin-macros": "^3.0.1",
-    "contentful-import": "^7.9.39",
+    "contentful-import": "^7.9.40",
     "dotenv": "^8.2.0",
     "gatsby-plugin-google-analytics": "^3.0.0",
     "gatsby-plugin-postcss": "^4.0.0",
