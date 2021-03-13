@@ -8,10 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
-      CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
-
     strategy:
       matrix:
         node-version:
@@ -46,5 +42,8 @@ jobs:
         run: echo $GITHUB_SHA > static/manifest.txt
       - name: Build
         run: npm run build
+        env:
+          CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+          CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
       - name: Deploy
         run: gsutil -m rsync -R public gs://${{ secrets.GCS_BUCKET }}
