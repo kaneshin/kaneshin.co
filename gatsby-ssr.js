@@ -1,14 +1,15 @@
 const React = require("react");
+const siteConfig = require("./site.config.js");
 
 const facebookSdkOptions = {
-  appId: "822757664484359",
+  appId: siteConfig.facebookSdk.appId,
   autoLogAppEvents: true,
   xfbml: true,
   version: "v8.0",
 };
 
 exports.onRenderBody = ({ setHeadComponents, setHtmlAttributes, setPreBodyComponents }, pluginOptions) => {
-  setHtmlAttributes({ lang: "ja" });
+  setHtmlAttributes(siteConfig.htmlAttributes);
   setHeadComponents([
     <link
       key="font-lato"
@@ -18,19 +19,24 @@ exports.onRenderBody = ({ setHeadComponents, setHtmlAttributes, setPreBodyCompon
     <script key="font-awesome" src="https://kit.fontawesome.com/fc2c56537d.js" crossOrigin="anonymous"></script>,
     <script key="embedly" async={true} crossOrigin="anonymous" src="//cdn.embedly.com/widgets/platform.js"></script>,
   ]);
-  setPreBodyComponents([
-    <script
-      key="facebook-async-init"
-      dangerouslySetInnerHTML={{
-        __html: `window.fbAsyncInit = function() {FB.init(${JSON.stringify(facebookSdkOptions)})}`,
-      }}
-    />,
-    <script
-      key="facebook-sdk"
-      async={true}
-      defer={true}
-      crossOrigin="anonymous"
-      src="https://connect.facebook.net/en_US/sdk.js"
-    ></script>,
-  ]);
+
+  const preBodyComponents = [];
+  if (facebookSdkOptions.appId) {
+    preBodyComponents.push(
+      <script
+        key="facebook-async-init"
+        dangerouslySetInnerHTML={{
+          __html: `window.fbAsyncInit = function() {FB.init(${JSON.stringify(facebookSdkOptions)})}`,
+        }}
+      />,
+      <script
+        key="facebook-sdk"
+        async={true}
+        defer={true}
+        crossOrigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js"
+      ></script>,
+    );
+  }
+  setPreBodyComponents(preBodyComponents);
 };

@@ -61,10 +61,7 @@
     "node": ">=10.13.0"
   },
   "homepage": "https://github.com/kaneshin/kaneshin.co",
-  "keywords": [
-    "gatsby",
-    "contentful"
-  ],
+  "keywords": ["gatsby", "contentful"],
   "license": "MIT",
   "main": "n/a",
   "repository": {
@@ -75,7 +72,7 @@
     "setup": "node ./bin/setup.js",
     "clean": "gatsby clean",
     "dev": "gatsby develop",
-    "build": "npm run build:gatsby",
+    "build": "SITE_NAME=kaneshin npm run build:gatsby",
     "build:gatsby": "gatsby build",
     "serve": "gatsby serve",
     "test": "jest"
