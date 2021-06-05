@@ -12,7 +12,6 @@ $ npm install
 
 ### Set up of the needed content model and create a configuration file
 
-
 To set up this project you need to provide your Space ID and the belonging API access tokens. You can find all the needed information in your Contentful space setting.
 
 - `.env.production` for production build
@@ -25,7 +24,7 @@ CONTENTFUL_ACCESS_TOKEN='[YOUR-CONTENTFUL-ACCESS-TOKEN]'
 
 All environment variables will be sourced and made available to gatsby-config.js, gatsby-node.js, etc.
 
-*NOTE: Do NOT commit this file to source control.*
+_NOTE: Do NOT commit this file to source control._
 
 ## Commands
 
@@ -65,7 +64,7 @@ If you have any problem when `dev`, `build` or `serve`, run this command.
 
 ## Deploy
 
-The repository uses GitHub Actions to upload its artifact to Google Cloud Storage.
+The repository uses GitHub Actions to upload its artifact to AWS S3
 
 ## Author
 
