@@ -1,4 +1,4 @@
-const config = {
+module.exports = {
   htmlAttributes: {
     lang: "ja",
   },
@@ -19,5 +19,3 @@ const config = {
   },
   exclude: [],
 };
-
-module.exports = config;

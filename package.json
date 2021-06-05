@@ -26,7 +26,7 @@
     "@babel/preset-react": "^7.13.13",
     "@types/facebook-js-sdk": "^3.3.2",
     "@types/jest": "^26.0.23",
-    "@types/node": "^15.12.0",
+    "@types/node": "^15.12.1",
     "@types/react": "^17.0.9",
     "@types/react-dom": "^17.0.6",
     "@types/react-helmet": "^6.1.1",
