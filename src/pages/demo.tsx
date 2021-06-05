@@ -13,7 +13,7 @@ const DemoPage: React.FC<PageProps> = props => {
       <SEO title={page.title} description={page.description} />
 
       <section className="x-layout my-40px max-w-screen-lg">
-        <h2 className="uppercase font-bold">Demo</h2>
+        <h2 className="uppercase font-bold">Hello</h2>
       </section>
     </Layout>
   );
