@@ -2,7 +2,7 @@
 
 [My personal portfolio website](https://kaneshin.co) created by Gatsby.
 
-- ![Primary workflow - GitHub Actions](https://github.com/kaneshin/kaneshin.co/workflows/Build%20and%20Deploy%20to%20GCS/badge.svg)
+- [![Build and Deploy to AWS S3](https://github.com/kaneshin/kaneshin.co/actions/workflows/deploy.yml/badge.svg)](https://github.com/kaneshin/kaneshin.co/actions/workflows/deploy.yml)
 
 ## Installation
 
