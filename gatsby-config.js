@@ -34,48 +34,10 @@ module.exports = {
       options: {
         trackingId: siteConfig.googleAnalytics.trackingId,
         head: false,
-        exclude: siteConfig.exclude,
       },
     },
     {
       resolve: "gatsby-plugin-sitemap",
-      options: {
-        output: "/sitemap.xml",
-        exclude: siteConfig.exclude,
-        query: `
-          {
-            site {
-              siteMetadata {
-                siteUrl
-              }
-            }
-            allSitePage {
-              nodes {
-                path
-              }
-            }
-        }`,
-        resolveSiteUrl: ({ site, allSitePage }) => {
-          return site.siteMetadata.siteUrl;
-        },
-        serialize: ({ site, allSitePage }) => {
-          return [
-            {
-              url: site.siteMetadata.siteUrl,
-              changefreq: `daily`,
-              priority: 1.0,
-            },
-          ].concat(
-            allSitePage.nodes.map(node => {
-              return {
-                url: `${site.siteMetadata.siteUrl}${node.path}`,
-                changefreq: `daily`,
-                priority: 1.0,
-              };
-            }),
-          );
-        },
-      },
     },
     "gatsby-plugin-twitter",
     "gatsby-plugin-typescript",

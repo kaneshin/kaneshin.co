@@ -17,5 +17,4 @@ module.exports = {
     image: "/img/ogp.jpg",
     twitterUsername: "@kaneshin0120",
   },
-  exclude: [],
 };
