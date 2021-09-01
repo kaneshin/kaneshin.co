@@ -41,7 +41,7 @@
     "gatsby-plugin-sitemap": "^4.9.0",
     "gatsby-plugin-twitter": "^3.13.0",
     "gatsby-plugin-typescript": "^3.13.0",
-    "gatsby-remark-prismjs": "^5.9.0",
+    "gatsby-remark-prismjs": "^5.10.0",
     "gatsby-transformer-remark": "^4.10.0",
     "path-browserify": "^1.0.1",
     "postcss": "^8.3.6",
