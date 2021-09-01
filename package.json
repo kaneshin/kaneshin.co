@@ -39,7 +39,7 @@
     "gatsby-plugin-sass": "^4.12.0",
     "gatsby-plugin-sharp": "^3.12.0",
     "gatsby-plugin-sitemap": "^4.8.0",
-    "gatsby-plugin-twitter": "^3.12.0",
+    "gatsby-plugin-twitter": "^3.13.0",
     "gatsby-plugin-typescript": "^3.13.0",
     "gatsby-remark-prismjs": "^5.9.0",
     "gatsby-transformer-remark": "^4.10.0",
